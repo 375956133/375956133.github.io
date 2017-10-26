@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CS10K</title>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>
+      <router-link to="/api/foo">/api/foo</router-link>
+      <router-link to="/api/foo/f1">api/foo/f1</router-link>
+      <router-link to="/api/foo/f2">api/foo/f2</router-link>
+    </p>
+    <router-view></router-view>
+  </div>
+</body>
+<script>
+const foo = { template: "<div>Home</div>" }
+const foof1 = { template: "<div>foof1</div>" }
+const foof2 = { template: "<div>foof2</div>" }
+
+const Api = {
+  template: `
+			<div>
+			<h3> Api{{$route.params.id}}</h3>
+			<router-view></router-view>
+		</div>`
+}
+const router = new VueRouter({
+  routes: [{
+    path: "/api/:id",
+    component: Api,
+    children: [
+      { path: "", component: foo },
+      { path: "f1", component: foof1 },
+      { path: "f2", component: foof2 },
+    ]
+  }]
+
+})
+var vm = new Vue({
+  el: "#app",
+  router
+})
+
+</script>
+
+</html>

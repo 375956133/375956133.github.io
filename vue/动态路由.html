@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+  <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="message">
+    <button @click=f1>点我啊</button>
+    <p>
+      <router-link to="/api/foo">/api/foo</router-link>
+      <router-link to="/api/bar">/api/bar</router-link>
+    </p>
+    <router-view></router-view>
+  </div>
+  <script>
+  const foo = { template: "<div>foo</div>" }
+  const bar = { template: "<div>bar</div>" }
+
+  const Api = {
+    template: "<div>Api{{$route.params.id}}</div>"
+  }
+
+  const router = new VueRouter({
+    routes: [
+      { path: "/api/:id", component: Api }
+    ]
+  })
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      message: "hello vue"
+    },
+    methods: {
+      f1: function() {
+        alert("hello vue")
+      }
+    },
+    router
+
+  });
+  
+  </script>
+</body>
+
+</html>

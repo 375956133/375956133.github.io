@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+  <input type="button" id="btn" value="点我">
+  <div id="app">
+    <input type="text" v-model="message">
+    <br>
+    <input type="button" value="点我试试" v-on:click=foo>
+    <my-component></my-component>
+    <child message="通过props可以传递数据"></child>
+  </div> 
+  
+  <script>
+  // var btn=document.getElementById("btn");
+  // btn.onclick=function(){
+  // 		alert(1)
+  // 	}
+
+  // 	====================================
+  $(function() {
+    $("#btn").on("click", function() {
+      alert(2)
+    })
+
+  });
+  // =================================
+  // 创建一个vue组件 必须在根实例创建之前创建才行
+  Vue.component("my-component", {
+    template: "<div>我是一个vue组件,我必须在创建根实例之前就创建 否则会报错哦</div>"
+  });
+  // vue组件必须在创建根实例之前创建才行 即在根实例创建之后再创建的话就会报错
+  // =========================================
+
+
+  Vue.component("child", {
+    props: ["message"],
+    template: "<span>{{message}}</span>"
+  })
+
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      message: "123"
+    },
+    methods: {
+      foo: function() {
+        console.log("hello vue");
+      }
+    }
+  });
+
+  </script>
+</body>
+
+</html>
