@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+}
+.ziti{
+    font-family: "宋体";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.zhuye {
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #F0F0F0;
+    text-align: center;
+    color: #818181;
+    font-size: 1.5rem;
+    font-weight: 700;
+   /*  background: url(../images/zt.png) no-repeat left top/37 36,url(../images/yt.png) no-repeat right top/30 30; */
+
+}
+.header .left-img{
+   
+    float: left;
+    padding-left: 12px;
+}
+.header .right-img{
+    float:right;
+    padding-right: 12px;
+    padding-top: 4px;
+}
+.sn-banner {
+    height: 212px;
+}
+
+.sn-banner .swiper-pagination {
+    bottom: -10px;
+}
+
+.sn-banner .swiper-wrapper img {
+    width: 100%;
+    height: 240px;
+}
+
+
+.box {
+    margin: 0 auto;
+    width: 92%;
+     /* background-color: red; */
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer .small {
+    flex: 1;
+    height: 72px;
+    /* line-height: 60px; */
+    /* background-color: pink; */
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.footer .small-left {
+    margin-right: 10px;
+}
+
+.footer .small li {
+    width: 100%;
+    height: 70px;
+}
+
+.footer .small li a {
+    display: block;
+    height: 70px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.footer .small li a p {
+    margin: -20px 0 10px;
+    color: #fff;
+}
+
+.footer .one-li {
+   background-image: url(../images/top.png);
+}
+
+.footer .two-li {
+      background-image: url(../images/y2.png);
+}
+.footer .three-li {
+      background-image: url(../images/3.png);
+}
+
+.footer .four-li {
+      background-image: url(../images/last.png);
+}

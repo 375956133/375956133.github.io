@@ -1,0 +1,190 @@
+/*
+* @Author: Administrator
+* @Date:   2016-11-29 19:01:04
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-11-29 21:31:05
+*/
+.header{
+	height: 70px;
+	margin-top: 5px;
+}
+
+.header .head-l{
+	float: left;
+	width: 500px;
+	height: 38px;
+}
+.header .head-r{
+	float: right;
+}
+.header .head-l li{
+	float: left;
+}
+.head-l a{
+	width: 245px;
+	height: 38px;
+	display: block;
+	background: url(../images/logo.png) no-repeat;
+	text-indent: -2000px;
+	padding: 0 20px;
+	float: left;
+}
+.head-l li{
+	float: left;
+	padding-left: 10px;
+}
+.head-r li{
+	float: right;
+}
+/* banner部分开始 */
+.banner{
+	height: 385px;
+	width: 1250px;
+}
+.banner-l{
+	width: 924px;
+	height: 386px;
+	float: left;
+
+}
+.banner-l img{
+	width: 928px;
+	height: 386px;
+float: left;
+}
+.banner-r{
+width: 300px;
+height: 386px;
+
+float: right;
+}
+.banner-r li{
+	line-height: 20px;
+margin-top: 24px;
+}
+.banner h3{
+	float: right;
+	background-color: green;
+	color: #fff;
+	margin-top: -400px;
+}
+/* 热门推荐开始 */
+
+.ban{
+	height: 174px;
+	
+/* 	background-color: red; */
+margin-top: 14px;
+}
+.ban img{
+	width:230px ;
+	height: 174px;
+	margin-right: 10px;
+}
+.ban .img1{
+	width: 140px;
+	height: 174px;
+}
+/* 职业课程开始 */
+.zzyc{
+	height: 80px;
+	border-bottom: 1px solid #666;
+	/* background-color: pink; */
+	padding-top: 20px;
+}
+ /* <!-- 全部开始 --> */
+ .nav-cc{
+ 	height: 64px;
+ }
+ .nav-cc li{
+ 	float: left;
+ 	padding-left: 20px;
+ 	margin-top: 10px;
+ }
+.nav-cc .qb{
+	color: green;
+}
+ /* <!-- 大趋势开始 --> */
+ .banqs{
+ 	height: 554px;
+ 	/* background-color: green; */
+ }
+.banqs  .publicbox{
+	width: 284px;
+	height: 284px;
+	/* background-color: yellow; */
+	float: left;
+	margin-right: 28px;
+}
+.publicbox img{
+	width: 284px;
+	height: 166px;
+	float: left;
+
+}
+.publicbox p{
+	line-height: 30px;
+	padding-left: 10px;
+}
+ /* <!-- 学员故事开始 --> */
+ .navgs{
+ 	height: 100px;
+ 	margin-top: 50px;
+ }
+
+.navgs .gs-l{
+	float: left;
+}
+.navgs .gs-r{
+	float: right;
+}
+/* <!-- 学员图片开始 --> */
+.xxtp{
+	height: 172px;
+
+}
+.xxtp .pubb{
+	width: 385px;
+	height: 170px;
+/* 	background-color: green; */
+	float: left;
+	line-height: 30px;
+	padding-left: 30px;
+}
+.pubb img{
+	float: left;
+	margin-left: 30px;
+}
+/* <!-- footer开始 --> */
+.footer{
+	height: 240px;
+	/* background-color: red; */
+	
+}
+.foot-top{
+	border-bottom: 1px solid #ccc;
+	height: 155px;
+	line-height: 20px;
+	text-align: center;
+
+}
+
+.foot-top .p1{
+float: left;
+}
+.foot-top .p21{
+	float: left;
+}
+.foot-top .p31{
+	float: right;
+}
+.foot-boom{
+	text-align: center;
+	margin-top: 10px;
+	line-height: 30px;
+}
+
+
+
+
+

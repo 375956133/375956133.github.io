@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 引入jquery-ui.css -->
+    <link rel="stylesheet" href="../bootstrap/node_modules/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .ziti {
+        font-family: "宋体";
+    }
+    li {
+        list-style: none;
+    }
+    .header {
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        background-color: #00b693;
+    }
+
+    .header h4 {
+        line-height: 100px;
+        font-size: 56px;
+        color: #fff;
+        float: right;
+        padding-right: 340px;
+    }
+
+    .header img {
+        margin-left: 170px;
+    }
+
+    .header .back {
+        float: left;
+        width: 50px;
+        height: 30px;
+        line-height: 114px;
+        color: #fff;
+        font-size: 70px;
+        padding-left: 20px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+        border: 0;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        color: #fff;
+        border: 0;
+    }
+
+    .table tr {
+        width: 100%;
+        height: 94px;
+    }
+
+    .table tbody tr td {
+        font-size: 40px;
+        font-weight: 700;
+        padding: 40px;
+        line-height: 34px;
+    }
+
+    .table tbody tr .right-padding {
+
+        padding-left: 110px;
+    }
+
+    .mianban-div {
+        line-height: 44px;
+        height: 130%;
+    }
+
+    .mianban h3 {
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .mianban-div h3 img {
+        margin-left: 569px;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        font-size: 400%;
+    }
+
+    .mianban-div .little {
+        background-color: #ccc;
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        border-radius: 10px;
+        margin-top: 12px;
+        font-size: 140px;
+    }
+
+    h5 {
+        line-height: 100px;
+    }
+
+    .little h5 {
+        font-size: 50px;
+        line-height: 120px;
+    }
+
+    .mianban-div span {
+        float: right;
+    }
+
+    .panel-heading h3 {
+        font-size: 40px;
+    }
+
+    .panel-body a {
+        font-size: 50px;
+        line-height: 90px;
+    }
+    </style>
+</head>
+
+<body class="ziti">
+    <div class="header">
+        <span class="glyphicon glyphicon-chevron-left back" id="back"></span>
+        <img src="../images/pd (2).png" height="90" width="60" alt="">
+        <h4>配电管理详情</h4>
+    </div>
+    <!-- 控制面板部分 -->
+    <div id="accordion" class="mianban-div">
+        <h3>1#变压器<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>a相电压</td>
+                        <td class="right-padding" id="m1ua">235.078995000000V</td>
+                    </tr>
+                    <tr>
+                        <td>b相电压</td>
+                        <td class="right-padding" id="m1ub"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电压</td>
+                        <td class="right-padding" id="m1uc"></td>
+                    </tr>
+                    <tr>
+                        <td>ab线电压</td>
+                        <td class="right-padding" id="m1uab"></td>
+                    </tr>
+                    <tr>
+                        <td>bc线电压</td>
+                        <td class="right-padding" id="m1ubc"></td>
+                    </tr>
+                    <tr>
+                        <td>ca线电压</td>
+                        <td class="right-padding" id="m1uca"></td>
+                    </tr>
+                    <tr>
+                        <td>a相电流</td>
+                        <td class="right-padding" id="m1ia"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电流</td>
+                        <td class="right-padding" id="m1ib"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电流</td>
+                        <td class="right-padding" id="m1ic"></td>
+                    </tr>
+                    <tr>
+                        <td>有功电度</td>
+                        <td class="right-padding" id="m1ep">399760.6875000kwh</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>2#变压器<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>a相电压</td>
+                        <td class="right-padding" id="m2ua"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电压</td>
+                        <td class="right-padding" id="m2ub"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电压</td>
+                        <td class="right-padding" id="m2uc"></td>
+                    </tr>
+                    <tr>
+                        <td>ab线电压</td>
+                        <td class="right-padding" id="m2uab"></td>
+                    </tr>
+                    <tr>
+                        <td>bc线电压</td>
+                        <td class="right-padding" id="m2ubc"></td>
+                    </tr>
+                    <tr>
+                        <td>ca线电压</td>
+                        <td class="right-padding" id="m2uca"></td>
+                    </tr>
+                    <tr>
+                        <td>a相电流</td>
+                        <td class="right-padding" id="m2ia"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电流</td>
+                        <td class="right-padding" id="m2ib"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电流</td>
+                        <td class="right-padding" id="m2ic"></td>
+                    </tr>
+                    <tr>
+                        <td>有功电度</td>
+                        <td class="right-padding" id="m2ep"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>3#变压器<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>a相电压</td>
+                        <td class="right-padding" id="m3ua"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电压</td>
+                        <td class="right-padding" id="m3ub"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电压</td>
+                        <td class="right-padding" id="m3uc"></td>
+                    </tr>
+                    <tr>
+                        <td>ab线电压</td>
+                        <td class="right-padding" id="m3uab"></td>
+                    </tr>
+                    <tr>
+                        <td>bc线电压</td>
+                        <td class="right-padding" id="m3ubc"></td>
+                    </tr>
+                    <tr>
+                        <td>ca线电压</td>
+                        <td class="right-padding" id="m3uca"></td>
+                    </tr>
+                    <tr>
+                        <td>a相电流</td>
+                        <td class="right-padding" id="m3ia"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电流</td>
+                        <td class="right-padding" id="m3ib"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电流</td>
+                        <td class="right-padding" id="m3ic"></td>
+                    </tr>
+                    <tr>
+                        <td>有功电度</td>
+                        <td class="right-padding" id="m3ep"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>4#变压器<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>a相电压</td>
+                        <td class="right-padding" id="m4ua"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电压</td>
+                        <td class="right-padding" id="m4ub"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电压</td>
+                        <td class="right-padding" id="m4uc"></td>
+                    </tr>
+                    <tr>
+                        <td>ab线电压</td>
+                        <td class="right-padding" id="m4uab"></td>
+                    </tr>
+                    <tr>
+                        <td>bc线电压</td>
+                        <td class="right-padding" id="m4ubc"></td>
+                    </tr>
+                    <tr>
+                        <td>ca线电压</td>
+                        <td class="right-padding" id="m4uca"></td>
+                    </tr>
+                    <tr>
+                        <td>a相电流</td>
+                        <td class="right-padding" id="m4ia"></td>
+                    </tr>
+                    <tr>
+                        <td>b相电流</td>
+                        <td class="right-padding" id="m4ib"></td>
+                    </tr>
+                    <tr>
+                        <td>c相电流</td>
+                        <td class="right-padding" id="m4ic"></td>
+                    </tr>
+                    <tr>
+                        <td>有功电度</td>
+                        <td class="right-padding" id="m4ep"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- 引入jquery-ui.js -->
+<script src="../bootstrap/node_modules/jquery-ui/jquery-ui.js"></script>
+<script>
+$(function() {
+    $("#back").on("click", function() {
+        window.location.href = "../index.html";
+    })
+    // 引入的jquery-ui控制面板的代码
+    $("#accordion").accordion();
+    // 调用数据库里的数据代码 传入与数据库参数名字一样的id  动态的获取实时数据
+    // 1号数据调用开始
+    var m1ua = document.getElementById("m1ua");
+    var m1ub = document.getElementById("m1ub");
+    var m1uc = document.getElementById("m1uc");
+    var m1uab = document.getElementById("m1uab");
+    var m1ubc = document.getElementById("m1ubc");
+    var m1uca = document.getElementById("m1uca");
+    var m1ia = document.getElementById("m1ia");
+    var m1ib = document.getElementById("m1ib");
+    var m1ic = document.getElementById("m1ic");
+    var m1ep = document.getElementById("m1ep");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ua",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            m1ua.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ub",
+        type: "get",
+        success: function(data) {
+            m1ub.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1uc",
+        type: "get",
+        success: function(data) {
+            m1uc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1uab",
+        type: "get",
+        success: function(data) {
+            m1uab.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ubc",
+        type: "get",
+        success: function(data) {
+            m1ubc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1uca",
+        type: "get",
+        success: function(data) {
+            m1uca.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ia",
+        type: "get",
+        success: function(data) {
+            m1ia.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ib",
+        type: "get",
+        success: function(data) {
+            m1ib.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ic",
+        type: "get",
+        success: function(data) {
+            m1ic.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m1ep",
+        type: "get",
+        success: function(data) {
+            m1ep.innerHTML = data.firstChild.textContent + "kwh";
+        }
+    })
+    // ============1号数据调用结束======================
+    // ============2号数据调用开始=======================
+    var m2ua = document.getElementById("m2ua");
+    var m2ub = document.getElementById("m2ub");
+    var m2uc = document.getElementById("m2uc");
+    var m2uab = document.getElementById("m2uab");
+    var m2ubc = document.getElementById("m2ubc");
+    var m2uca = document.getElementById("m2uca");
+    var m2ia = document.getElementById("m2ia");
+    var m2ib = document.getElementById("m2ib");
+    var m2ic = document.getElementById("m2ic");
+    var m2ep = document.getElementById("m2ep");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ua",
+        type: "get",
+        success: function(data) {
+            m2ua.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ub",
+        type: "get",
+        success: function(data) {
+            m2ub.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2uc",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            m2uc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2uab",
+        type: "get",
+        success: function(data) {
+            m2uab.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ubc",
+        type: "get",
+        success: function(data) {
+            m2ubc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2uca",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            m2uca.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ia",
+        type: "get",
+        success: function(data) {
+            m2ia.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ib",
+        type: "get",
+        success: function(data) {
+            m2ib.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ic",
+        type: "get",
+        success: function(data) {
+            m2ic.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m2ep",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            m2ep.innerHTML = data.firstChild.textContent + "kwh";
+        }
+    })
+    // =================2号数据调用结束================================
+    // =================3号数据调用开始================================
+    var m3ua = document.getElementById("m3ua");
+    var m3ub = document.getElementById("m3ub");
+    var m3uc = document.getElementById("m3uc");
+    var m3uab = document.getElementById("m3uab");
+    var m3ubc = document.getElementById("m3ubc");
+    var m3uca = document.getElementById("m3uca");
+    var m3ia = document.getElementById("m3ia");
+    var m3ib = document.getElementById("m3ib");
+    var m3ic = document.getElementById("m3ic");
+    var m3ep = document.getElementById("m3ep");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ua",
+        type: "get",
+        success: function(data) {
+            m3ua.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ub",
+        type: "get",
+        success: function(data) {
+            m3ub.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3uc",
+        type: "get",
+        success: function(data) {
+            m3uc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3uab",
+        type: "get",
+        success: function(data) {
+            m3uab.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ubc",
+        type: "get",
+        success: function(data) {
+            m3ubc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3uca",
+        type: "get",
+        success: function(data) {
+            m3uca.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ia",
+        type: "get",
+        success: function(data) {
+            m3ia.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ib",
+        type: "get",
+        success: function(data) {
+            m3ib.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ic",
+        type: "get",
+        success: function(data) {
+            m3ic.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m3ep",
+        type: "get",
+        success: function(data) {
+            m3ep.innerHTML = data.firstChild.textContent + "kwh";
+        }
+    })
+
+    // =================3号数据调用结束================================
+    // ==================4号数据调用开始=============================
+    var m4ep = document.getElementById("m4ep");
+    var m4ic = document.getElementById("m4ic");
+    var m4ib = document.getElementById("m4ib");
+    var m4ia = document.getElementById("m4ia");
+    var m4uca = document.getElementById("m4uca");
+    var m4ubc = document.getElementById("m4ubc");
+    var m4uab = document.getElementById("m4uab");
+    var m4uc = document.getElementById("m4uc");
+    var m4ub = document.getElementById("m4ub");
+    var m4ua = document.getElementById("m4ua");
+
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ep",
+        type: "get",
+        success: function(data) {
+            m4ep.innerHTML = data.firstChild.textContent + "kwh";
+        }
+    })
+
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ic",
+        type: "get",
+        success: function(data) {
+            m4ic.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ib",
+        type: "get",
+        success: function(data) {
+            m4ib.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ia",
+        type: "get",
+        success: function(data) {
+            m4ia.innerHTML = data.firstChild.textContent + "A";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4uca",
+        type: "get",
+        success: function(data) {
+            m4uca.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ubc",
+        type: "get",
+        success: function(data) {
+            m4ubc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4uab",
+        type: "get",
+        success: function(data) {
+            m4uab.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4uc",
+        type: "get",
+        success: function(data) {
+            m4uc.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ub",
+        type: "get",
+        success: function(data) {
+            m4ub.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=m4ua",
+        type: "get",
+        success: function(data) {
+            m4ua.innerHTML = data.firstChild.textContent + "V";
+        }
+    })
+    // =================4号数据调用结束============================
+
+
+
+
+
+
+})
+</script>
+
+</html>

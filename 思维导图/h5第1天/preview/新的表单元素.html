@@ -1,0 +1,153 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:新的表单元素</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p>&lt;!doctype html&gt;</p>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Typora Writings</title></head>
+<body><h1>新的表单元素</h1>
+<p>datalist:</p>
+<p>该元素素规定了输入区域的选项列表,可以让用户有一些选项</p>
+<p>id:id属性,想要使用该datalist的元素需要通过list=id的方式来指定</p>
+<h1>多媒体</h1>
+<h2>audio标签</h2>
+<p>src:音频的地址</p>
+<p>controls:音频播放控制器</p>
+<p>autoplay:自动播放</p>
+<p>loop:循环</p>
+<p>poster:指定视频不播放时显示的画面</p>
+<p><audio src="song.ogg" controls="controls" autoplay loop>
+</audio></p>
+<h2>video标签</h2>
+<p>src:音频的地址</p>
+<p>controls:音频播放控制器</p>
+<p>autoplay:自动播放</p>
+<p>loop:循环</p>
+<p>width：宽度</p>
+<p>height：高度</p>
+<p><video src="movie.ogg" controls autoplay loop width = "200px" height = "200px">
+</video></p>
+<p>由于视频在不同浏览器中显示不同 所以需要source指定多个视频</p>
+<h1>两种进度条</h1>
+<h2>process</h2>
+<h2>meter</h2>
+<h1>dom语法</h1>
+<p>在jQuery中我们可以通过选择器快速获取元素,这些新的选择器,在html5中提供了一个类似的方法</p>
+<p>querySelector方法</p>
+<p>返回当前文档中第一个匹配特定选择器的元素</p>
+<p>var node = document.querySelector(css选择器);</p>
+<p>querySelectorAll</p>
+<p>返回当前文档中所有匹配特定选择器的元素（返回值是数组）</p>
+<p>var nodeLists = document.querySelectorAll(css选择器);</p>
+<h2>classList</h2>
+<p>这个元素返回的是dom元素的class列表</p>
+<pre lang='undefined'>
+// 获取元素
+        var dom = document.querySelector(&quot;header&quot;);
+</pre>
+<p>add:添加一个class到元素的class列表中     dom.classList.add(&quot;top&quot;);</p>
+<p>remove:从元素的class列表中移除一个class     dom.classList.remove(&#39;pink&#39;);</p>
+<p>toggle:切换一个class是否存在于一个元素的class列表中 有就删除 没有就添加  dom.classList.toggle(&#39;pink&#39;);</p>
+<p>contains:查询一个指定的class是否存在于class列表中    alert(dom.classList.contains(&#39;orange&#39;));</p>
+<h1>h5data*属性</h1>
+<p>data-:这个是固定格式</p>
+<p>date-xxx:xxx是自定义的值</p>
+<p>属性名不应该有大写 并且在data-后至少得有一个字符</p>
+<p>属性值可以是任意字符串</p>
+<p>不要使用纯数字 特殊字符等作为自定义值</p>
+<p>如果data之后使用-连接多个值，取值时  需要驼峰命名法</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+</html>
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

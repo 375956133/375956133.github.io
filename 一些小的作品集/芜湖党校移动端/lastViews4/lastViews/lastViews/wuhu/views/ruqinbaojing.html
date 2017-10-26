@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 引入jquery-ui.css -->
+    <link rel="stylesheet" href="../bootstrap/node_modules/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .ziti {
+        font-family: "宋体";
+    }
+    li {
+        list-style: none;
+    }
+    .header {
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        background-color: #00b693;
+    }
+    .header h4 {
+        line-height: 100px;
+        font-size: 56px;
+        color: #fff;
+        float: right;
+        padding-right: 340px;
+    }
+
+    .header img {
+        margin-left: 170px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+        border: 0;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        border: 0;
+    }
+
+    .header .back {
+        float: left;
+        width: 50px;
+        height: 30px;
+        line-height: 114px;
+        color: #fff;
+        font-size: 70px;
+        padding-left: 20px;
+    }
+
+    .table tr {
+        width: 100%;
+        height: 100px;
+    }
+
+    .table tbody tr td {
+        font-size: 40px;
+        font-weight: 700;
+        padding: 24px;
+        line-height: 80px;
+    }
+
+    .table tbody tr .right-padding {
+        padding-left: 692px;
+    }
+
+    .mianban-div {
+        line-height: 44px;
+        height: 130%;
+    }
+
+    .mianban h3 {
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .mianban-div h3 img {
+        margin-left: 642px;
+        width: 80px;
+        height: 60px;
+    }
+
+    .mianban-div .little-right {
+        margin-left: 670px;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        font-size: 400%;
+        color: #fff;
+    }
+
+    .mianban-div .little {
+        background-color: #ccc;
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        border-radius: 10px;
+        margin-top: 12px;
+        font-size: 140px;
+    }
+
+    h5 {
+        line-height: 100px;
+    }
+
+    .little h5 {
+        font-size: 50px;
+        line-height: 120px;
+    }
+
+    .mianban-div span {
+        float: right;
+    }
+
+    .panel-heading h3 {
+        font-size: 40px;
+    }
+
+    .panel-body a {
+        font-size: 50px;
+        line-height: 90px;
+    }
+    </style>
+</head>
+
+<body class="ziti">
+    <div class="header">
+        <span class="glyphicon glyphicon-chevron-left back" id="back"></span>
+        <img src="../images/rq.png" height="90" width="60">
+        <h4>入侵报警详情</h4>
+    </div>
+    <!-- 控制面板部分 -->
+    <div id="accordion" class="mianban-div">
+        <h3>防区1<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区1</td>
+                    <td class="right-padding" id="f1">0</td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区2<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区2</td>
+                    <td class="right-padding" id="f2"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区3<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区3</td>
+                    <td class="right-padding" id="f3"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区4<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区4</td>
+                    <td class="right-padding" id="f4"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区5<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区5</td>
+                    <td class="right-padding" id="f5"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区6<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区6</td>
+                    <td class="right-padding" id="f6"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区7<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区7</td>
+                    <td class="right-padding" id="f7"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区8<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区8</td>
+                    <td class="right-padding" id="f8"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区9<img src="../images/yuanquan_03.png" class="little-right"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区9</td>
+                    <td class="right-padding" id="f9"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区10<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区10</td>
+                    <td class="right-padding" id="f10"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区11<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区11</td>
+                    <td class="right-padding" id="f11"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区12<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区12</td>
+                    <td class="right-padding" id="f12"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区13<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区13</td>
+                    <td class="right-padding" id="f13"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区14<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区14</td>
+                    <td class="right-padding" id="f14"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区15<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区15</td>
+                    <td class="right-padding" id="f15"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区16<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区16</td>
+                    <td class="right-padding" id="f16"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区17<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区17</td>
+                    <td class="right-padding" id="f17"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区18<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区18</td>
+                    <td class="right-padding" id="f18"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区19<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区19</td>
+                    <td class="right-padding" id="f19"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区20<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区20</td>
+                    <td class="right-padding" id="f20"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区21<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table" id="table">
+                <tr>
+                    <td>防区21</td>
+                    <td class="right-padding" id="f21"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区22<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区22</td>
+                    <td class="right-padding" id="f22"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区23<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区23</td>
+                    <td class="right-padding" id="f23"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区24<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区24</td>
+                    <td class="right-padding" id="f24"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区25<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区25</td>
+                    <td class="right-padding" id="f25"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区26<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区26</td>
+                    <td class="right-padding" id="f26"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区27<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区27</td>
+                    <td class="right-padding" id="f27"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区28<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区28</td>
+                    <td class="right-padding" id="f28"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区29<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区29</td>
+                    <td class="right-padding" id="f29"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区30<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区30</td>
+                    <td class="right-padding" id="f30"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区31<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区31</td>
+                    <td class="right-padding" id="f31"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区32<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区32</td>
+                    <td class="right-padding" id="f32"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区33<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区33</td>
+                    <td class="right-padding" id="f33"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区34<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区34</td>
+                    <td class="right-padding" id="f34"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>防区35<img src="../images/yuanquan_03.png"></h3>
+        <div class="panel panel-default">
+            <table class="table">
+                <tr>
+                    <td>防区35</td>
+                    <td class="right-padding" id="f35"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="../bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- 引入jquery-ui.js -->
+<script src="../bootstrap/node_modules/jquery-ui/jquery-ui.js"></script>
+<script>
+$(function() {
+    // 引入的jquery-ui控制面板的代码
+    $("#accordion").accordion();
+    $("#back").on("click", function() {
+        window.location.href = "../index.html";
+    });
+    // ===============动态获取数据开始============================
+    // var  f1=document.getElementById("f1");原生写法
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f1",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            console.log(data.lastChild.textContent);
+            // f1.innerHTML=data.lastChild.textContent; 原生写法
+            $("#f1").html(data.lastChild.textContent); //直接用jquery对象的html()方法
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f2",
+        type: "get",
+        success: function(data) {
+            $("#f2").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f3",
+        type: "get",
+        success: function(data) {
+            $("#f3").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f4",
+        type: "get",
+        success: function(data) {
+            $("#f4").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f5",
+        type: "get",
+        success: function(data) {
+            $("#f5").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f6",
+        type: "get",
+        success: function(data) {
+            $("#f6").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f7",
+        type: "get",
+        success: function(data) {
+            $("#f7").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f8",
+        type: "get",
+        success: function(data) {
+            $("#f8").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f9",
+        type: "get",
+        success: function(data) {
+            $("#f9").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f10",
+        type: "get",
+        success: function(data) {
+            $("#f10").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f11",
+        type: "get",
+        success: function(data) {
+            $("#f11").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f12",
+        type: "get",
+        success: function(data) {
+            $("#f12").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f13",
+        type: "get",
+        success: function(data) {
+            $("#f13").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f14",
+        type: "get",
+        success: function(data) {
+            $("#f14").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f15",
+        type: "get",
+        success: function(data) {
+            $("#f15").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f16",
+        type: "get",
+        success: function(data) {
+            $("#f16").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f17",
+        type: "get",
+        success: function(data) {
+            $("#f17").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f18",
+        type: "get",
+        success: function(data) {
+            $("#f18").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f19",
+        type: "get",
+        success: function(data) {
+            $("#f19").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f20",
+        type: "get",
+        success: function(data) {
+            $("#f20").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f21",
+        type: "get",
+        success: function(data) {
+            $("#f21").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f22",
+        type: "get",
+        success: function(data) {
+            $("#f22").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f23",
+        type: "get",
+        success: function(data) {
+            $("#f23").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f24",
+        type: "get",
+        success: function(data) {
+            $("#f24").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f25",
+        type: "get",
+        success: function(data) {
+            $("#f25").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f26",
+        type: "get",
+        success: function(data) {
+            $("#f26").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f27",
+        type: "get",
+        success: function(data) {
+            $("#f27").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f28",
+        type: "get",
+        success: function(data) {
+            $("#f28").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f29",
+        type: "get",
+        success: function(data) {
+            $("#f29").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f30",
+        type: "get",
+        success: function(data) {
+            $("#f30").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f31",
+        type: "get",
+        success: function(data) {
+            $("#f31").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f32",
+        type: "get",
+        success: function(data) {
+            $("#f32").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f33",
+        type: "get",
+        success: function(data) {
+            $("#f33").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f34",
+        type: "get",
+        success: function(data) {
+            $("#f34").html(data.lastChild.textContent);
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=f35",
+        type: "get",
+        success: function(data) {
+            $("#f35").html(data.lastChild.textContent);
+        }
+    });
+    // ===============动态获取数据结束==========
+});
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Ani(target,animal){
+        this.target=target;
+        this.animal=animal;
+    }
+    Ani.prototype.open=function(){
+        console.log("打开"+this.target);
+    }
+    Ani.prototype.put=function(){
+        console.log("把"+this.animal+"放进去");
+    }
+     Ani.prototype.close=function(){
+        console.log("把"+this.target+"关住");
+    }
+
+   var a= new Ani("冰箱");
+   var b=new Ani("冰箱","大虎");
+   var c=new Ani("冰箱");
+//    通过new出来的实例对象点出来属性跟方法
+   a.open();
+   b.put();
+   c.close();
+   Ani.prototype.int=function(){
+       a.open();
+       b.put();
+       c.close();
+   }
+   new Ani("冰箱","老鼠").int();
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 引入jquery-ui.css -->
+    <link rel="stylesheet" href="../bootstrap/node_modules/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .ziti {
+        font-family: "宋体";
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .header {
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        background-color: #00b693;
+    }
+
+    .header h4 {
+        line-height: 100px;
+        font-size: 56px;
+        color: #fff;
+        float: right;
+        padding-right: 340px;
+    }
+
+    .header img {
+        margin-left: 170px;
+    }
+
+    .header .back {
+        float: left;
+        width: 50px;
+        height: 30px;
+        line-height: 114px;
+        color: #fff;
+        font-size: 70px;
+        padding-left: 20px;
+    }
+
+    .mianban-div {
+        line-height: 46px;
+        height: 130%;
+    }
+
+    .mianban h3 {
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .mianban-div h3 img {
+        margin-left: 630px;
+    }
+
+    .mianban-div .right-small {
+        margin-left: 600px;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        font-size: 400%;
+    }
+
+    .mianban-div .little {
+        background-color: #ccc;
+        width: 100%;
+        height: 120px;
+        line-height: 60px;
+        border-radius: 20px;
+        margin-top: 12px;
+        font-size: 140px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+        border: 0;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        color: #fff;
+        border: 0;
+    }
+
+    .mianban-div .glyphicon-ok-sign {
+        float: left;
+        font-size: 40px;
+        line-height: 110px;
+    }
+
+    .little span {
+        font-size: 42px;
+        padding-right: 24px;
+    }
+
+    .little a {
+        font-size: 50px;
+        line-height: 130px;
+    }
+
+    .little .zhuangtai {
+        padding-right: 482px;
+    }
+
+    .panel-title {
+        font-size: 36px;
+    }
+    </style>
+</head>
+
+<body class="ziti">
+    <div class="header">
+        <span class="glyphicon glyphicon-chevron-left back" id="back"></span>
+        <img src="../images/nt_03.png" height="90" width="60" alt="">
+        <h4>暖通空调详情</h4>
+    </div>
+    <!-- 控制面板部分 -->
+    <div id="accordion" class="mianban-div">
+        <h3>楼层1<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-1F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="1b3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="1b"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="1b2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="1b4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-1F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="1fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="1fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="1fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="1fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 展开盒子结束 -->
+        <h3>楼层2<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-2F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="2b3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="2b"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="2b2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="2b4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-2F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="2c3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="2c"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="2c2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="2c4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-2F-CC</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="2FCC3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="2FCC1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="2FCC2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="2FCC4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层3<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-3F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="3fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="3fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="3fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="3fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-3F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="3FCC3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="3FCC1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="3FCC2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="3FCC4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层4<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-4F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="4FCC3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="4FCC1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="4FCC2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="4FCC4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-4F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="4fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="4fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="4fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="4fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层5<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-5F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="5FCC3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="5FCC1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="5FCC2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="5FCC4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-5F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="5fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="5fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="5fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="5fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层6<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-6F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="6fcc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="6fcc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="6fcc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="6fcc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-6F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="6fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="6fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="6fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="6fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层7<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-7F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="7fcc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="7fcc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="7fcc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="7fcc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-7F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="7fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="7fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="7fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="7fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层8<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-8F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="8fcc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="8fcc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="8fcc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="8fcc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-8F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="8fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="8fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="8fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="8fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层9<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-9F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="9fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="9fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="9fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="9fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层10<img src="../images/yuanquan_03.png" height="60" width="80" class="right-small"></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-10F-C</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="10fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="10fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="10fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="10fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层11<img src="../images/yuanquan_03.png" height="60" width="80" alt="" class="right-small"></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-11F-A</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="11fa3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="11fa1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="11fa2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="11fa4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">AHU-11F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="11fc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="11fc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="11fc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="11fc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>楼层12<img src="../images/yuanquan_03.png" height="60" width="80" alt="" class="right-small"></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-12F-A</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="12fa3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="12fa1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="12fa2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="12fa4"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">PAU-12F-B</h3>
+            </div>
+            <div class="panel-body">
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">运行状态</span><span id="1fcc3"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">送风温度</span><span id="1fcc1"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">回风温度</span><span id="1fcc2"></span></li>
+                    </ul>
+                </div>
+                <div class="little">
+                    <ul>
+                        <li><span class="glyphicon glyphicon-ok-sign"></span><span class="zhuangtai">报警状态</span><span id="1fcc4"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- 引入jquery-ui.js -->
+<script src="../bootstrap/node_modules/jquery-ui/jquery-ui.js"></script>
+<script>
+// 页面加载后数据开始动态的获取并显示到span标签中
+$(function() {
+    // 引入的jquery-ui控制面板的代码
+    $("#accordion").accordion();
+    $("#back").on("click", function() {
+        window.location.href = "../index.html";
+    });
+    //===AHU-1F-B AHU-2F-B AHU-2F-C空调获取数据开始==
+    //这3组空调的数据是一样的 用不同的id 获取相同的数据 
+    //以此类推 以下都是这种方式获取数据的
+    // 动态获取数据代码开始
+    // 由于变量不能以数字开头,所以此处的变量前面都加了下划线  但是id以数字为首是可以的  这么做是为了id名与数据库中的对应参数name值一致好寻找控制
+    var _1b3 = document.getElementById("1b3"); //运行状态
+    var _1b = document.getElementById("1b"); //送风温度
+    var _1b2 = document.getElementById("1b2"); //回风温度
+    var _1b4 = document.getElementById("1b4"); //报警状态
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b3",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            _1b3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b",
+        type: "get",
+        success: function(data) {
+            _1b.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b2",
+        type: "get",
+        success: function(data) {
+            _1b2.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b4",
+        type: "get",
+        success: function(data) {
+            _1b4.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    var _2b3 = document.getElementById("2b3"); //运行状态
+    var _2b = document.getElementById("2b"); //送风温度
+    var _2b2 = document.getElementById("2b2"); //回风温度
+    var _2b4 = document.getElementById("2b4"); //报警状态
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b3",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            _2b3.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b",
+        type: "get",
+        success: function(data) {
+            _2b.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b2",
+        type: "get",
+        success: function(data) {
+            _2b2.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b4",
+        type: "get",
+        success: function(data) {
+            _2b4.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    var _2c3 = document.getElementById("2c3"); //运行状态
+    var _2c = document.getElementById("2c"); //送风温度
+    var _2c2 = document.getElementById("2c2"); //回风温度
+    var _2c4 = document.getElementById("2c4"); //报警状态
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b3",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            _2c3.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b",
+        type: "get",
+        success: function(data) {
+            _2c.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b2",
+        type: "get",
+        success: function(data) {
+            _2c2.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1b4",
+        type: "get",
+        success: function(data) {
+            _2c4.innerHTML = data.lastChild.textContent;
+
+        }
+    });
+    //=AHU-1F-B AHU-2F-B AHU-2F-C 空调获取数据结束====
+    // ===AHU-1F-C 3F-B 空调获取数据开始=======
+    var _1fc3 = document.getElementById("1fc3");
+    var _1fc1 = document.getElementById("1fc1");
+    var _1fc2 = document.getElementById("1fc2");
+    var _1fc4 = document.getElementById("1fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc3",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            _1fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc1",
+        type: "get",
+        success: function(data) {
+            _1fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc2",
+        type: "get",
+        success: function(data) {
+            _1fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc4",
+        type: "get",
+        success: function(data) {
+            _1fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+
+
+    // ====AHU-1F-B AHU-2F-B AHU-2F-C空调获取数据结束======
+
+    //==AHU-1F-C 3F-B空调获取数据开始=========
+
+    var _1fc3 = document.getElementById("1fc3");
+    var _1fc1 = document.getElementById("1fc1");
+    var _1fc2 = document.getElementById("1fc2");
+    var _1fc4 = document.getElementById("1fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc3",
+        type: "get",
+        success: function(data) {
+            _1fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc1",
+        type: "get",
+        success: function(data) {
+            _1fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc2",
+        type: "get",
+        success: function(data) {
+            _1fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc4",
+        type: "get",
+        success: function(data) {
+            _1fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _3fc3 = document.getElementById("3fc3");
+    var _3fc1 = document.getElementById("3fc1");
+    var _3fc2 = document.getElementById("3fc2");
+    var _3fc4 = document.getElementById("3fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc3",
+        type: "get",
+        success: function(data) {
+            _3fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc1",
+        type: "get",
+        success: function(data) {
+            _3fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc2",
+        type: "get",
+        success: function(data) {
+            _3fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=1fc4",
+        type: "get",
+        success: function(data) {
+            _3fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+
+    // == AHU-1F-C 3F-B空调获取数据结束========
+    // ====AHU-2F-CC 3F-C 4F-B 5F-B空调获取数据开始====
+    var _2FCC3 = document.getElementById("2FCC3");
+    var _2FCC1 = document.getElementById("2FCC1");
+    var _2FCC2 = document.getElementById("2FCC2");
+    var _2FCC4 = document.getElementById("2FCC4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC3",
+        type: "get",
+        success: function(data) {
+            _2FCC3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC1",
+        type: "get",
+        success: function(data) {
+            _2FCC1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC2",
+        type: "get",
+        success: function(data) {
+            _2FCC2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC4",
+        type: "get",
+        success: function(data) {
+            _2FCC4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _3FCC3 = document.getElementById("3FCC3");
+    var _3FCC1 = document.getElementById("3FCC1");
+    var _3FCC2 = document.getElementById("3FCC2");
+    var _3FCC4 = document.getElementById("3FCC4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC3",
+        type: "get",
+        success: function(data) {
+            _3FCC3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC1",
+        type: "get",
+        success: function(data) {
+            _3FCC1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC2",
+        type: "get",
+        success: function(data) {
+            _3FCC2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC4",
+        type: "get",
+        success: function(data) {
+            _3FCC4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _4FCC3 = document.getElementById("4FCC3");
+    var _4FCC1 = document.getElementById("4FCC1");
+    var _4FCC2 = document.getElementById("4FCC2");
+    var _4FCC4 = document.getElementById("4FCC4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC3",
+        type: "get",
+        success: function(data) {
+            _4FCC3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC1",
+        type: "get",
+        success: function(data) {
+            _4FCC1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC2",
+        type: "get",
+        success: function(data) {
+            _4FCC2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC4",
+        type: "get",
+        success: function(data) {
+            _4FCC4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _5FCC3 = document.getElementById("5FCC3");
+    var _5FCC1 = document.getElementById("5FCC1");
+    var _5FCC2 = document.getElementById("5FCC2");
+    var _5FCC4 = document.getElementById("5FCC4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC3",
+        type: "get",
+        success: function(data) {
+            _5FCC3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC1",
+        type: "get",
+        success: function(data) {
+            _5FCC1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC2",
+        type: "get",
+        success: function(data) {
+            _5FCC2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=2FCC4",
+        type: "get",
+        success: function(data) {
+            _5FCC4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // =AHU-2F-CC 3F-C 4F-B 5F-B空调获取数据结束==
+    //====AHU-4F-C 5F-C 6F-B 7F-B空调获取数据开始========
+
+    var _4fc3 = document.getElementById("4fc3");
+    var _4fc1 = document.getElementById("4fc1");
+    var _4fc2 = document.getElementById("4fc2");
+    var _4fc4 = document.getElementById("4fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc3",
+        type: "get",
+        success: function(data) {
+            _4fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc1",
+        type: "get",
+        success: function(data) {
+            _4fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc2",
+        type: "get",
+        success: function(data) {
+            _4fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc4",
+        type: "get",
+        success: function(data) {
+            _4fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _5fc3 = document.getElementById("5fc3");
+    var _5fc1 = document.getElementById("5fc1");
+    var _5fc2 = document.getElementById("5fc2");
+    var _5fc4 = document.getElementById("5fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc3",
+        type: "get",
+        success: function(data) {
+            _5fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc1",
+        type: "get",
+        success: function(data) {
+            _5fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc2",
+        type: "get",
+        success: function(data) {
+            _5fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc4",
+        type: "get",
+        success: function(data) {
+            _5fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _6fcc3 = document.getElementById("6fcc3");
+    var _6fcc1 = document.getElementById("6fcc1");
+    var _6fcc2 = document.getElementById("6fcc2");
+    var _6fcc4 = document.getElementById("6fcc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc3",
+        type: "get",
+        success: function(data) {
+            _6fcc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc1",
+        type: "get",
+        success: function(data) {
+            _6fcc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc2",
+        type: "get",
+        success: function(data) {
+            _6fcc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc4",
+        type: "get",
+        success: function(data) {
+            _6fcc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _7fcc3 = document.getElementById("7fcc3");
+    var _7fcc1 = document.getElementById("7fcc1");
+    var _7fcc2 = document.getElementById("7fcc2");
+    var _7fcc4 = document.getElementById("7fcc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc3",
+        type: "get",
+        success: function(data) {
+            _7fcc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc1",
+        type: "get",
+        success: function(data) {
+            _7fcc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc2",
+        type: "get",
+        success: function(data) {
+            _7fcc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=4fc4",
+        type: "get",
+        success: function(data) {
+            _7fcc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // ===AHU-4F-C 5F-C 6F-B 7F-B空调获取数据结束===
+
+    // ===AHU-6F-C 7F-C 8F-B空调获取数据开始=====
+    var _6fc3 = document.getElementById("6fc3");
+    var _6fc1 = document.getElementById("6fc1");
+    var _6fc2 = document.getElementById("6fc2");
+    var _6fc4 = document.getElementById("6fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc3",
+        type: "get",
+        success: function(data) {
+            console.log(123);
+            console.log(data);
+            _6fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc1",
+        type: "get",
+        success: function(data) {
+            _6fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc2",
+        type: "get",
+        success: function(data) {
+            _6fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc4",
+        type: "get",
+        success: function(data) {
+            _6fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _7fc3 = document.getElementById("7fc3");
+    var _7fc1 = document.getElementById("7fc1");
+    var _7fc2 = document.getElementById("7fc2");
+    var _7fc4 = document.getElementById("7fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc3",
+        type: "get",
+        success: function(data) {
+            _7fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc1",
+        type: "get",
+        success: function(data) {
+            _7fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc2",
+        type: "get",
+        success: function(data) {
+            _7fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc4",
+        type: "get",
+        success: function(data) {
+            _7fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _8fcc3 = document.getElementById("8fcc3");
+    var _8fcc1 = document.getElementById("8fcc1");
+    var _8fcc2 = document.getElementById("8fcc2");
+    var _8fcc4 = document.getElementById("8fcc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc3",
+        type: "get",
+        success: function(data) {
+            _8fcc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc1",
+        type: "get",
+        success: function(data) {
+            _8fcc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc2",
+        type: "get",
+        success: function(data) {
+            _8fcc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=6fc4",
+        type: "get",
+        success: function(data) {
+            _8fcc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    //===AHU-6F-C 7F-C 8F-B空调获取数据结束=====
+    // ==AHU-8F-C空调获取数据开始=========
+
+    var _8fc3 = document.getElementById("8fc3");
+    var _8fc1 = document.getElementById("8fc1");
+    var _8fc2 = document.getElementById("8fc2");
+    var _8fc4 = document.getElementById("8fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=8fc3",
+        type: "get",
+        success: function(data) {
+            _8fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=8fc1",
+        type: "get",
+        success: function(data) {
+            _8fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=8fc2",
+        type: "get",
+        success: function(data) {
+            _8fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=8fc4",
+        type: "get",
+        success: function(data) {
+            _8fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // ====AHU-8F-C空调获取数据结束========
+    //====AHU-9F-C 10F-C 11F-B空调获取数据开始====
+    var _9fc3 = document.getElementById("9fc3");
+    var _9fc1 = document.getElementById("9fc1");
+    var _9fc2 = document.getElementById("9fc2");
+    var _9fc4 = document.getElementById("9fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc3",
+        type: "get",
+        success: function(data) {
+            _9fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc1",
+        type: "get",
+        success: function(data) {
+            _9fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc2",
+        type: "get",
+        success: function(data) {
+            _9fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc4",
+        type: "get",
+        success: function(data) {
+            _9fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _10fc3 = document.getElementById("10fc3");
+    var _10fc1 = document.getElementById("10fc1");
+    var _10fc2 = document.getElementById("10fc2");
+    var _10fc4 = document.getElementById("10fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc3",
+        type: "get",
+        success: function(data) {
+            _10fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc1",
+        type: "get",
+        success: function(data) {
+            _10fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc2",
+        type: "get",
+        success: function(data) {
+            _10fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc4",
+        type: "get",
+        success: function(data) {
+            _10fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    var _11fc3 = document.getElementById("11fc3");
+    var _11fc1 = document.getElementById("11fc1");
+    var _11fc2 = document.getElementById("11fc2");
+    var _11fc4 = document.getElementById("11fc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc3",
+        type: "get",
+        success: function(data) {
+            _11fc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc1",
+        type: "get",
+        success: function(data) {
+            _11fc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc2",
+        type: "get",
+        success: function(data) {
+            _11fc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=9fc4",
+        type: "get",
+        success: function(data) {
+            _11fc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // ===AHU-9F-C 10F-C 11F-B空调获取数据结束===
+    //===AHU-11F-A空调获取数据开始=====
+
+    var _11fa3 = document.getElementById("11fa3");
+    var _11fa1 = document.getElementById("11fa1");
+    var _11fa2 = document.getElementById("11fa2");
+    var _11fa4 = document.getElementById("11fa4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=11fa3",
+        type: "get",
+        success: function(data) {
+            _11fa3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=11fa1",
+        type: "get",
+        success: function(data) {
+            _11fa1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=11fa2",
+        type: "get",
+        success: function(data) {
+            _11fa2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=11fa4",
+        type: "get",
+        success: function(data) {
+            _11fa4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // ====AHU-11F-A空调获取数据结束=========
+    //========AHU-12F-A空调获取数据开始=======
+    var _12fa3 = document.getElementById("12fa3");
+    var _12fa1 = document.getElementById("12fa1");
+    var _12fa2 = document.getElementById("12fa2");
+    var _12fa4 = document.getElementById("12fa4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa3",
+        type: "get",
+        success: function(data) {
+            _12fa3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa1",
+        type: "get",
+        success: function(data) {
+            _12fa1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa2",
+        type: "get",
+        success: function(data) {
+            _12fa2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa4",
+        type: "get",
+        success: function(data) {
+            _12fa4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // ===AHU-12F-A空调获取数据结束=======
+    //========AHU-12F-B空调获取数据开始=======
+    var _1fcc3 = document.getElementById("1fcc3");
+    var _1fcc1 = document.getElementById("1fcc1");
+    var _1fcc2 = document.getElementById("1fcc2");
+    var _1fcc4 = document.getElementById("1fcc4");
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa3",
+        type: "get",
+        success: function(data) {
+            _1fcc3.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa1",
+        type: "get",
+        success: function(data) {
+            _1fcc1.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa2",
+        type: "get",
+        success: function(data) {
+            _1fcc2.innerHTML = data.lastChild.textContent;
+        }
+    });
+    $.ajax({
+        url: "http://localhost:10000/WebData.asmx/GetData?strTagName=12fa4",
+        type: "get",
+        success: function(data) {
+            _1fcc4.innerHTML = data.lastChild.textContent;
+        }
+    });
+    // ===AHU-12F-B空调获取数据结束=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})
+</script>
+
+</html>

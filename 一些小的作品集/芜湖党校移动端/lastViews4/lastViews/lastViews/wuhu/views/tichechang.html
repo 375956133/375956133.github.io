@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../bootstrap/node_modules/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .ziti {
+        font-family: "宋体";
+    }
+    li {
+        list-style: none;
+    }
+    .header {
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        background-color: #00b693;
+    }
+
+    .header h4 {
+        line-height: 100px;
+        font-size: 56px;
+        color: #fff;
+        float: right;
+        padding-right: 340px;
+    }
+
+    .header .back {
+        float: left;
+        width: 50px;
+        height: 30px;
+        line-height: 114px;
+        color: #fff;
+        font-size: 70px;
+        padding-left: 20px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        color: #fff;
+        border: 0;
+    }
+
+    .mianban-div {
+        line-height: 46px;
+        height: 130%;
+    }
+
+    .mianban h3 {
+        height: 70px;
+        line-height: 70px;
+        color: #fff;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        font-size: 400%;
+    }
+
+    .mianban-div .little {
+        background-color: #11caa6;
+        width: 100%;
+        height: 120px;
+        line-height: 118px;
+        border-radius: 20px;
+        margin-top: 12px;
+        font-size: 140px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+        border: 0;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        color: #fff;
+        border: 0;
+    }
+
+    .mianban-div span {
+        float: right;
+    }
+
+    .mianban-div .glyphicon-ok-sign {
+        float: left;
+        font-size: 40px;
+        line-height: 110px;
+    }
+
+    .little span {
+        font-size: 42px;
+        padding-right: 40px;
+    }
+
+    .little a {
+        font-size: 50px;
+        line-height: 130px;
+    }
+
+    .little .zhuangtai {
+        padding-right: 504px;
+    }
+
+    .table tr td {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .fenyeqi {
+        float: right;
+        font-size: 50px;
+    }
+
+    .income_box {
+        max-height: 581px;
+        min-height: 30px;
+        _height: 581px;
+        height: 581px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        width: 795px;
+    }
+
+    .colgroup1,
+    .colgroup2 {
+        width: 15%;
+    }
+
+    .colgroup3,
+    .colgroup4,
+    .colgroup5,
+    .colgroup6 {
+        width: 14%;
+    }
+
+    .income_table {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .pptv_pages .pages {
+        display: inline-block;
+        top: 20px;
+        padding: 4px 0;
+        height: 38px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .pptv_pages .inner_pages {
+        display: inline-block;
+        position: absolute;
+        top: 12px;
+        left: 0;
+        height: 38px;
+    }
+    </style>
+</head>
+
+<body class="ziti">
+    <div class="header">
+        <span class="glyphicon glyphicon-chevron-left back" id="back"></span>
+        <h4>停车场详情</h4>
+    </div>
+    <div id="accordion">
+        <h3>停车场系统-174</h3>
+        <div>
+            <table class="table" id="#YourTable">
+                <tr>
+                    <td>
+                        姓名
+                    </td>
+                    <td id="tb1name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>卡号
+                    </td>
+                    <td id="tb1kh">
+                    </td>
+                </tr>
+                <tr>
+                    <td>车牌号
+                    </td>
+                    <td id="tb1cp">
+                    </td>
+                </tr>
+                <tr>
+                    <td>进场时间
+                    </td>
+                    <td id="tb1jctime">
+                    </td>
+                </tr>
+                <tr>
+                    <td>出场时间
+                    </td>
+                    <td id="tb1cctime">
+                    </td>
+                </tr>
+                <tr>
+                    <td>入场名称
+                    </td>
+                    <td id="tb1rcmc">
+                    </td>
+                </tr>
+                <tr>
+                    <td>出场名称
+                    </td>
+                    <td id="tb1ccmc">
+                    </td>
+                </tr>
+                <!--  <tr>
+                    <td>出场操作
+                    </td>
+                    <td id="tb1cccz">
+                        
+                    </td>
+                </tr> -->
+                <tr>
+                    <td>卡类型
+                    </td>
+                    <td id="tb1klx">
+                    </td>
+                </tr>
+                <!--   <tr>
+                    <td>收费时间
+                    </td>
+                    <td id="tb1sf">
+                        
+                    </td>
+                </tr> -->
+            </table>
+            <!--     <nav aria-label="Page navigation" class="fenyeqi">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+        <h3>停车场系统-179</h3>
+        <div>
+            <table class="table" id="#YourTable">
+                <tr>
+                    <td>人员姓名
+                    </td>
+                    <td>
+                        张玮
+                    </td>
+                </tr>
+                <tr>
+                    <td>卡号
+                    </td>
+                    <td>
+                        00000022
+                    </td>
+                </tr>
+                <tr>
+                    <td>车牌号
+                    </td>
+                    <td>
+                        皖BHW018
+                    </td>
+                </tr>
+                <tr>
+                    <td>进场时间
+                    </td>
+                    <td>
+                        2017-07-27 9:04:17
+                    </td>
+                </tr>
+                <tr>
+                    <td>出场时间
+                    </td>
+                    <td>
+                        2017-07-27 9:21:06
+                    </td>
+                </tr>
+                <tr>
+                    <td>入场名称
+                    </td>
+                    <td>
+                        入口车道1
+                    </td>
+                </tr>
+                <tr>
+                    <td>出场名称
+                    </td>
+                    <td>
+                        出口车道2
+                    </td>
+                </tr>
+                <tr>
+                    <td>出场操作
+                    </td>
+                    <td>
+                        管理员
+                    </td>
+                </tr>
+                <tr>
+                    <td>卡类型
+                    </td>
+                    <td>
+                        月卡A
+                    </td>
+                </tr>
+                <tr>
+                    <td>收费时间
+                    </td>
+                    <td>
+                        17分钟
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="../bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../bootstrap/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bootstrap/node_modules/jquery-ui/jquery-ui.js"></script>
+<script>
+$(function() {
+    // 引入的jquery-ui控制面板的代码
+    $("#accordion").accordion();
+    // 点击回退图标让页面跳转到主页面
+    $("#back").on("click", function() {
+        window.location.href = "../index.html";
+    });
+    // 分页代码
+    // $('#YourTable').bootstrapTable({
+    //     method: 'get',
+    //     contentType: "application/x-www-form-urlencoded", //一种编码。好像在post请求的时候需要用到。这里用的get请求，注释掉这句话也能拿到数据
+    //     url: "your-server-url", //要请求数据的文件路径
+    //     dataField: "data", //这是返回的json数组的key.默认好像是"rows".这里只有前后端约定好就行
+    //     pageNumber: 1, //初始化加载第一页，默认第一页
+    //     pagination: true, //是否分页
+    //     queryParams: queryParams, //请求服务器时所传的参数
+    //     sidePagination: 'server', //指定服务器端分页
+    //     pageSize: 10, //单页记录数
+    //     pageList: [10, 20, 30, 40], //分页步进值
+    //     responseHandler: responseHandler, //请求数据成功后，渲染表格前的方法
+    //     colums: [{ //列参数
+    //         field: "人员姓名",
+    //         title: "人员姓名",
+    //     }, {
+    //         field: "卡号",
+    //         title: "00000022",
+    //     }, {
+    //         field: "车牌号",
+    //         title: "皖BHW018",
+
+    //     }, {
+    //         field: "进场时间",
+
+    //         title: "2017-07-27 9:04:17",
+
+    //     }, {
+    //         field: "出场时间",
+
+    //         title: "2017-07-27 9:21:06 ",
+
+    //     }, {
+    //         field: "入场名称",
+
+    //         title: "入口车道1",
+
+
+    //     }, {
+    //         field: "出场名称",
+
+    //         title: "出口车道2",
+    //     }, {
+    //         field: "出场操作",
+
+    //         title: "管理员",
+
+    //     }, {
+    //         field: "卡类型",
+
+    //         title: "月卡A",
+
+    //     }, {
+    //         field: "收费时间",
+
+    //         title: "17分钟",
+
+    //     }]
+    // })
+
+    // //请求服务数据时所传参数
+    // function queryParams(params) {
+    //     return {
+    //         pageSize: params.limit, //每一页的数据行数，默认是上面设置的10(pageSize)
+    //         pageIndex: params.offset / params.limit + 1, //当前页面,默认是上面设置的1(pageNumber)
+    //         param: "Your Param" //这里是其他的参数，根据自己的需求定义，可以是多个
+    //     }
+    // }
+
+    // //请求成功方法
+    // function responseHandler(result) {
+    //     var errcode = result.errcode; //在此做了错误代码的判断
+    //     if (errcode != 0) {
+    //         alert("错误代码" + errcode);
+    //         return;
+    //     }
+    //     //如果没有错误则返回数据，渲染表格
+    //     return {
+    //         total: result.dataLength, //总页数,前面的key必须为"total"
+    //         data: result.rowDatas //行数据，前面的key要与之前设置的dataField的值一致.
+    //     };
+    // };
+
+    // //刷新表格数据,点击你的按钮调用这个方法就可以刷新
+    // function refresh() {
+    //     $('#YourTable').bootstrapTable('refresh', { url: "your-server-url" });
+    // }
+    // =================调用数据库代码开始===========================
+    var tb1name = document.getElementById("tb1name");
+    var tb1kh = document.getElementById("tb1kh");
+    var tb1cp = document.getElementById("tb1cp");
+    var tb1jctime = document.getElementById("tb1jctime");
+    var tb1cctime = document.getElementById("tb1cctime");
+    var tb1rcmc = document.getElementById("tb1rcmc");
+    var tb1ccmc = document.getElementById("tb1ccmc");
+    var tb1cccz = document.getElementById("tb1cccz");
+    var tb1klx = document.getElementById("tb1klx");
+
+
+    $.ajax({
+        url: "http://localhost:10000/webData.asmx/GetTable?strTableName=TC",
+        type: "get",
+        success: function(data) {
+            console.log(data);
+            console.log(data.firstChild);
+            console.log(data.firstChild.getElementsByTagName("Table"));
+            var tableList = data.firstChild.getElementsByTagName("Table");
+            // for(var i=0;i<tableList.length;i++){
+            //     console.log(tableList[i]);
+            // }
+            console.log(data.firstChild.getElementsByTagName("Table")[0]);
+            console.log(data.firstChild.getElementsByTagName("Table")[0].childNodes[3].childNodes[0].nodeValue);
+            var tb1nametext = data.firstChild.getElementsByTagName("Table")[0].childNodes[1].childNodes[0];
+            var tb1khtext = data.firstChild.getElementsByTagName("Table")[0].childNodes[3].childNodes[0].nodeValue;
+            var tb1cptext = data.firstChild.getElementsByTagName("Table")[0].childNodes[5].childNodes[0].nodeValue;
+            var tb1jctimetext = data.firstChild.getElementsByTagName("Table")[0].childNodes[7].childNodes[0].nodeValue;
+            var tb1cctimetext = data.firstChild.getElementsByTagName("Table")[0].childNodes[9].childNodes[0].nodeValue;
+            var tb1rcmctext = data.firstChild.getElementsByTagName("Table")[0].childNodes[11].childNodes[0].nodeValue;
+            var tb1ccmctext = data.firstChild.getElementsByTagName("Table")[0].childNodes[13].childNodes[0];
+            var tb1klxtext = data.firstChild.getElementsByTagName("Table")[0].childNodes[15].childNodes[0].nodeValue;
+            console.log(tb1klxtext);
+            tb1name.innerHTML = tb1nametext;
+            tb1kh.innerHTML = tb1khtext;
+            tb1cp.innerHTML = tb1cptext;
+            tb1jctime.innerHTML = tb1jctimetext;
+            tb1cctime.innerHTML = tb1cctimetext;
+            tb1rcmc.innerHTML = tb1rcmctext;
+            tb1ccmc.innerHTML = tb1ccmctext;
+            tb1klx.innerHTML = tb1klxtext;
+
+        }
+    });
+
+
+});
+</script>
+
+</html>

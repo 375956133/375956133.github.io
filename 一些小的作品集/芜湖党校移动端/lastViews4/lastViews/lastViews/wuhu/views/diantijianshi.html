@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 引入jquery-ui.css -->
+    <link rel="stylesheet" href="../bootstrap/node_modules/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .ziti {
+        font-family: "宋体";
+    }
+    li {
+        list-style: none;
+    }
+    .header {
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        background-color: #00b693;
+    }
+
+    .header h4 {
+        line-height: 100px;
+        font-size: 56px;
+        color: #fff;
+        float: right;
+        padding-right: 340px;
+    }
+
+    .header img {
+        margin-left: 170px;
+    }
+
+    .header .back {
+        float: left;
+        width: 50px;
+        height: 30px;
+        line-height: 114px;
+        color: #fff;
+        font-size: 70px;
+        padding-left: 20px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        color: #fff;
+        border: 0;
+    }
+
+    .table tr {
+        width: 100%;
+        height: 360px;
+    }
+
+    .table tbody tr td {
+        font-size: 40px;
+        font-weight: 700;
+        padding: 40px;
+        line-height: 88px;
+    }
+
+    .table tbody .glyphicon-chevron-down {
+        float: right;
+        line-height: 70px;
+    }
+
+    .mianban-div {
+        line-height: 44px;
+        height: 130%;
+    }
+
+    .mianban-div img {
+        margin-left: 670px;
+    }
+
+    .mianban-div h3 {
+        line-height: 2.1;
+        font-size: 30px;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        font-size: 291%;
+    }
+
+    .mianban-div .little {
+        background-color: #ccc;
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        border-radius: 10px;
+        margin-top: 12px;
+        font-size: 140px;
+    }
+
+    h5 {
+        line-height: 100px;
+    }
+
+    .little h5 {
+        font-size: 50px;
+        line-height: 120px;
+    }
+
+    .mianban-div span {
+        float: right;
+    }
+
+    .panel-heading h3 {
+        font-size: 40px;
+    }
+
+    .panel-body a {
+        font-size: 50px;
+        line-height: 90px;
+    }
+    </style>
+</head>
+
+<body class="ziti">
+    <div class="header">
+        <span class="glyphicon glyphicon-chevron-left back" id="back"></span>
+        <img src="../images/2.png" height="90" width="70" alt="">
+        <h4>电梯监控详情</h4>
+    </div>
+    <!-- 控制面板部分 -->
+    <div id="accordion" class="mianban-div">
+        <h3>1号消防电梯<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/1hao.html">jk1</a></li>
+                    <li><a href="dianti-views/1.html">jk2</a></li>
+                    <li><a href="dianti-views/2.html">jk3</a></li>
+                    <li><a href="dianti-views/3.html">jk4</a></li>
+                    <li><a href="dianti-views/4.html">jk5</a></li>
+                    <li><a href="dianti-views/5.html">jk6</a></li>
+                    <li><a href="dianti-views/zhijie.html">jk7</a></li>
+                    <li><a href="">jk8</a></li>
+                    <li><a href="">jk9</a></li>
+                    <li><a href="">jk10</a></li>
+                    <li><a href="">jk11</a></li>
+                    <li><a href="">jk12</a></li>
+                    <li><a href="">jk13</a></li>
+                    <li><a href="">jk14</a></li>
+                    <li><a href="">jk15</a></li>
+                    <li><a href="">jk16</a></li>
+                    <li><a href="">jk17</a></li>
+                    <li><a href="">jk18</a></li>
+                    <li><a href="">jk19</a></li>
+                    <li><a href="">jk20</a></li>
+                    <li><a href="">jk21</a></li>
+                    <li><a href="">jk22</a></li>
+                    <li><a href="">jk23</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">1层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                    <li><a href="">jk7</a></li>
+                    <li><a href="">jk8</a></li>
+                    <li><a href="">jk9</a></li>
+                    <li><a href="">jk10</a></li>
+                    <li><a href="">jk11</a></li>
+                    <li><a href="">jk12</a></li>
+                    <li><a href="">jk13</a></li>
+                    <li><a href="">jk14</a></li>
+                    <li><a href="">jk15</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">1层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 展开盒子结束 -->
+        <h3>南大门无障碍电梯
+<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">2层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/2hao.html">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                    <li><a href="">jk7</a></li>
+                    <li><a href="">jk8</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">2层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">2层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">2层E区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                    <li><a href="">jk7</a></li>
+                    <li><a href="">jk8</a></li>
+                    <li><a href="">jk9</a></li>
+                    <li><a href="">jk10</a></li>
+                    <li><a href="">jk11</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3>三号电梯<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">3层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/3hao.html">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层D区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层E区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                    <li><a href="">jk7</a></li>
+                    <li><a href="">jk8</a></li>
+                    <li><a href="">jk9</a></li>
+                    <li><a href="">jk10</a></li>
+                    <li><a href="">jk11</a></li>
+                    <li><a href="">jk12</a></li>
+                    <li><a href="">jk13</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3>  北楼东电梯-1
+<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">4层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/4hao.html">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">4层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                    <li><a href="">jk7</a></li>
+                    <li><a href="">jk8</a></li>
+                    <li><a href="">jk9</a></li>
+                    <li><a href="">jk10</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">4层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">4层D区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">4层夹层</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3>  北楼东电梯-2
+<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">5层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/5hao.html">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">5层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">5层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">5层D区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3>北楼东电梯
+<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">6层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/6hao.html">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">6层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">6层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">6层D区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                    <li><a href="">jk5</a></li>
+                    <li><a href="">jk6</a></li>
+                    <li><a href="">jk7</a></li>
+                </ul>
+            </div>
+        </div>
+        <h3> 7号消防电梯
+<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">7层A区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="dianti-views/7hao.html">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">7层B区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">7层C区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                </ul>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">7层D区</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">jk1</a></li>
+                    <li><a href="">jk2</a></li>
+                    <li><a href="">jk3</a></li>
+                    <li><a href="">jk4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- 引入jquery-ui.js -->
+<script src="../bootstrap/node_modules/jquery-ui/jquery-ui.js"></script>
+<script>
+$(function() {
+    // 引入的jquery-ui控制面板的代码
+    $("#accordion").accordion();
+    $("#back").on("click", function() {
+        window.location.href = "../index.html";
+    })
+})
+</script>
+
+</html>

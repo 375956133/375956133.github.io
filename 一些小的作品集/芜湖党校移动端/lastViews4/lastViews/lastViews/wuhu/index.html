@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./bootstrap/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- 引入了移动端播放轮播图的插件swiper -->
+    <link rel="stylesheet" href="./bootstrap/node_modules/swipe/css/swiper.css">
+    <script src="./bootstrap/node_modules/swipe/js/swiper.js"></script>
+</head>
+<body class="ziti">
+    <div class="zhuye" ng-hide="false">
+        <div class="header">
+            <img src="images/zt.png" height="40" width="30" class="left-img">芜湖市委党校智能管理系统
+            <img src="images/yt.png" height="40" width="40" class="right-img">
+        </div>
+        <!-- 轮播图部分开始 -->
+        <div class="box">
+            <div class="sn-banner swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="#"><img src="images/bird.png" alt=""/></a></li>
+                    <li class="swiper-slide"><a href="#"><img src="images/bird.png" alt=""/></a></li>
+                </ul>
+                <!-- 分页器及轮播图下面的小圆点 -->
+                <ul class="swiper-pagination down-little">
+                    <li class="now"></li>
+                    <li></li>
+                </ul>
+            </div>
+          
+            <div class="footer">
+                <div class="small  one-li topSmall">
+                    <li><a href="views/ruqinbaojing.html"><img src="images/r.png" width="24" height="24" alt=""><p>入侵报警系统</p></a></li>
+                    <li>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="small small-left two-li">
+                    <li><a href="views/tichechang.html"><img src="images/tc.png" height="24" width="24" alt=""><p>停车场系统</p></a></li>
+                    <li>
+                </div>
+                <div class="small  two-li">
+                    <li><a href="views/peidian.html"><img src="images/pd.png" height="24" width="24" alt=""><p>配电管理系统</p></a></li>
+                    <li>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="small small-left three-li">
+                    <li><a href="./views/nuantongkongtiao.html"><img src="images/kt.png" height="24" width="24" alt=""><p>暖通空调系统</p></a></li>
+                    <li>
+                </div>
+                <div class="small  three-li">
+                    <li><a href="./views/nengyuan.html"><img src="images/ny.png" height="24" width="24" alt=""><p>能源管理系统</p></a></li>
+                    <li>
+                </div>
+            </div>
+            <div class="footer">
+
+                <div class="small small-left four-li">
+                    <li><a href="views/dianti.html"><img src="images/dt.png" height="24" width="24" alt=""><p>电梯监视系统</p></a></li>
+                    <li>
+                </div>
+                <div class="small  four-li">
+                    <li><a href="views/shiping.html"><img src="images/sp.png" height="24" width="24" alt=""><p>视频监控系统</p></a></li>
+                    <li>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+$(function() {
+    new Swiper(".swiper-container", {
+        // 自动轮播
+        autoplay: 1000,        // 是否循环轮播
+        loop: true,
+        // 用户操作之后是否继续自动轮播 默认是true
+        autoplayDisableOnInteraction: false,
+        // 设置分页器
+        pagination: ".swiper-pagination"
+    });
+
+})
+</script>
+
+</html>

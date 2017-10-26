@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<input type="button" name="" value="点击div变色" id="btn">
+<div id="div1"></div>
+<script>
+//    onload=function(){
+//        document.querySelector("input").onclick = function () {
+//            document.querySelector("div").style.backgroundColor = "red";
+//        }
+//    }
+
+        function ChangeColor(btnId,divId){
+//            构造函数中的this跟原型方法中的this指向相同:都是指向原型对象
+            this.btn=document.getElementById(btnId);
+            this.div=document.getElementById(divId);
+        }
+        ChangeColor.prototype.init=function(){
+           // 原型方法中的this实际就是构造函数中的实例化对象,实际上与构造函数中的this指向相同
+            var that=this;//缓存实例对象
+            this.btn.onclick=function(){
+//                这里的this是指绑定事件函数的dom对象
+//                事件方法中的this指的是绑定事件的对象
+                that.div.style.backgroundColor="yellow";
+            }
+        }
+    onload=function(){
+    var cc=new ChangeColor("btn","div1");
+        cc.init();
+    }
+
+</script>
+
+</body>
+</html>
+<script></script>

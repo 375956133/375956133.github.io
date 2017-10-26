@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" class="ziti">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 引入jquery-ui.css -->
+    <link rel="stylesheet" href="../bootstrap/node_modules/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .ziti {
+        font-family: "宋体";
+    }
+    li {
+        list-style: none;
+    }
+    .header {
+        width: 100%;
+        height: 110px;
+        line-height: 110px;
+        background-color: #00b693;
+    }
+
+    .header h4 {
+        line-height: 100px;
+        font-size: 56px;
+        color: #fff;
+        float: right;
+        padding-right: 340px;
+    }
+
+    .header img {
+        margin-left: 170px;
+    }
+
+    .header .back {
+        float: left;
+        width: 50px;
+        height: 30px;
+        line-height: 114px;
+        color: #fff;
+        font-size: 70px;
+        padding-left: 20px;
+    }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active,
+    a.ui-button:active,
+    .ui-button:active,
+    .ui-button.ui-state-active:hover {
+        background-color: #11caa6;
+         border:0;
+    }
+
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-button,
+    html .ui-button.ui-state-disabled:hover,
+    html .ui-button.ui-state-disabled:active {
+        background-color: #11caa6;
+        color: #fff;
+         border:0;
+    }
+
+    .table tr {
+        width: 100%;
+        height: 60px;
+    }
+
+    .table tbody tr td {
+        font-size: 40px;
+        font-weight: 700;
+        padding: 40px;
+        line-height: 10px;
+    }
+   .table tbody tr .right-padding {
+        padding-left: 240px;
+    }
+    .mianban-div {
+        line-height: 44px;
+        height: 130%;
+    }
+
+    .mianban h3 {
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .mianban-div h3 img {
+        margin-left: 700px;
+    }
+
+    .mianban-div .shuibiao-padding {
+        margin-left: 466px;
+    }
+
+    .ui-accordion .ui-accordion-header {
+        font-size: 400%;
+    }
+
+    .mianban-div .little {
+        background-color: #ccc;
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        border-radius: 10px;
+        margin-top: 12px;
+        font-size: 140px;
+    }
+
+    h5 {
+        line-height: 100px;
+    }
+
+    .little h5 {
+        font-size: 50px;
+        line-height: 120px;
+    }
+
+
+    .panel-heading h3 {
+        font-size: 40px;
+    }
+
+    .panel-body a {
+        font-size: 50px;
+        line-height: 90px;
+    }
+    </style>
+</head>
+
+<body class="ziti">
+    <div class="header">
+        <span class="glyphicon glyphicon-chevron-left back" id="back"></span>
+        <img src="../images/nengyuan_03.png" height="90" width="60" alt="">
+        <h4>能源管理详情</h4>
+    </div>
+    <!-- 控制面板部分 -->
+    <div id="accordion" class="mianban-div">
+        <h3>A区<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <!-- 展开盒子部分 -->
+        <div class="panel panel-default">
+         <div class="panel-heading">
+                <h3 class="panel-title">1层A区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000103
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表03
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">6750.1500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">6750.1500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:02
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <!-- =============== -->
+           
+            <div class="panel-heading">
+                <h3 class="panel-title">2层A区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000103
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表03
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">6750.1500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">6750.1500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:02
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层A区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000104
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表04
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">
+                            8037.4500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">8037.4500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:03
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">-1层A区</h3>
+            </div>
+             <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td class="right-padding" id="t1bh">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td class="right-padding" id="t1mc">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td class="right-padding" id="t1lc">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td class="right-padding" id="t1fh">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td class="right-padding" id="t1cs">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td class="right-padding" id="t1cj">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td class="right-padding" id="t1dq">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td class="right-padding" id="t1time">
+                        </td>
+                    </tr>
+                      <tr>
+                        <td>楼宇名称</td>
+                        <td class="right-padding" id="t1ly">
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+           
+        </div>
+        <!-- 展开盒子结束 -->
+        <h3>B区<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1层B区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000301
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表01
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">14300.2000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">14300.2000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:19
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">2层B区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000302
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表02
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">4684.6000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">4684.6000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:20
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层B区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000303
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表03
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">
+                            7317.1500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">7317.1500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:20
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>C区<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1层C区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000201
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表01
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">6127.4500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">6127.4500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:11
+                        </td>
+                    </tr>
+                </table>
+            </div>
+             
+            <div class="panel-heading">
+                <h3 class="panel-title">2层C区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000203
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表03
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">2452.5000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">2452.5000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">
+                            2017/7/26 22:00:13
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">3层C区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000204
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表04
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">
+                            6484.5000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">6484.5000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:13
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>D区<img src="../images/yuanquan_03.png" height="60" width="80" alt=""></h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">3层D区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000408
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表19
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">870.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">870.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:35
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">4层D区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000407
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表18
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">1271.1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">1271.1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:35
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">5层D区</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000406
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表17
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">101
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">有功电量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">
+                            2393.5000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">2393.5000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/26 22:00:34
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3>-1层水表部分<img src="../images/yuanquan_03.png" height="60" width="80" class="shuibiao-padding"></h3>
+        <div class="panel panel-default">
+          
+             <div class="panel-heading">
+                <h3 class="panel-title">3号房</h3>
+            </div>
+             <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000501
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">水表01
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">-1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">水表
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">273.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">273.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/19 21:00:00
+                        </td>
+                    </tr>
+                </table>
+            </div>
+           
+              <div class="panel-heading">
+                <h3 class="panel-title">4号房</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000501
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">水表01
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">-1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">水表
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">273.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">273.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/19 21:00:00
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">5号房</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>编号</td>
+                        <td  class="right-padding">0000502
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>名称</td>
+                        <td  class="right-padding">电表02
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td  class="right-padding">-1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td  class="right-padding">2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>参数</td>
+                        <td  class="right-padding">水表
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次采集</td>
+                        <td  class="right-padding">617.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>当次读取</td>
+                        <td  class="right-padding">617.0000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>抄表时间</td>
+                        <td  class="right-padding">2017/7/19 21:00:01
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- ======水表结束====== -->
+    </div>
+</body>
+<script src="../bootstrap/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- 引入jquery-ui.js -->
+<script src="../bootstrap/node_modules/jquery-ui/jquery-ui.js"></script>
+
+<script>
+
+$(function() {
+
+    // 引入的jquery-ui控制面板的代码
+    $("#accordion").accordion();
+    $("#back").on("click", function() {
+        window.location.href = "../index.html";
+    });
+    // 动态获取数据开始
+    var t1bh=document.getElementById("t1bh");
+    var t1mc=document.getElementById("t1mc");
+    var t1lc=document.getElementById("t1lc");
+    var t1fh=document.getElementById("t1fh");
+    var t1cs=document.getElementById("t1cs");
+    var t1cj=document.getElementById("t1cj");
+    var t1dq=document.getElementById("t1dq");
+    var t1time=document.getElementById("t1time");
+    var t1ly=document.getElementById("t1ly");
+    console.log(t1bh);
+   
+    $.ajax({
+      url:"http://localhost:10000/webData.asmx/GetTable?strTableName=NY",
+        type:"get",
+        success:function(data){
+            console.log(data);
+            console.log(data.firstChild);
+            var tableList=data.firstChild.getElementsByTagName("Table");
+            console.log(tableList);
+            console.log(tableList[0]); //第1个table
+             console.log(tableList[0].childNodes[0]);//EmptyTextNode 
+            console.log(tableList[0].childNodes[1]); //<编号>0000101</编号>
+console.log(tableList[0].childNodes[1].childNodes[0].nodeValue);//0000101
+      
+          var a=tableList[0].childNodes[1].childNodes[0].nodeValue;
+          var b=tableList[0].childNodes[3].childNodes[0].nodeValue;
+          var c=tableList[0].childNodes[5].childNodes[0].nodeValue;
+          var d=tableList[0].childNodes[7].childNodes[0].nodeValue;
+          var e=tableList[0].childNodes[9].childNodes[0].nodeValue;
+          var f=tableList[0].childNodes[11].childNodes[0].nodeValue;
+          var g=tableList[0].childNodes[13].childNodes[0].nodeValue;
+          var h=tableList[0].childNodes[15].childNodes[0].nodeValue;
+          var i=tableList[0].childNodes[17].childNodes[0].nodeValue;
+          console.log(a);
+          console.log(b);
+          t1bh.innerHTML=a;
+          t1mc.innerHTML=b;
+          t1lc.innerHTML=c;
+          t1fh.innerHTML=d;
+          t1cs.innerHTML=e;
+          t1cj.innerHTML=f;
+          t1dq.innerHTML=g;
+          t1time.innerHTML=h;
+          t1ly.innerHTML=i;
+        }
+    })
+})
+</script>
+
+</html>

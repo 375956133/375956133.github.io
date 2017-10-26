@@ -1,0 +1,191 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:css3属性选择器</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="css3-">css3属性选择器</h1>
+<h2 id="-">兄弟选择器</h2>
+<p>作用：获取相同父元素的所有兄弟元素  但是不包括元素之前的兄弟元素  中间有其他的标签也不会受到影响</p>
+<p>.first~.meat{</p>
+<p>background-color;</p>
+<p>}</p>
+<h2 id="-">属性选择器</h2>
+<p>属性选择器的作用：根据标签的属性去筛选对应的元素 </p>
+<p>选择器语法：</p>
+<p>e[attr]:包含attr属性</p>
+<p>e[att=&quot;val&quot;]:属性值为val</p>
+<p>e[att~=&quot;val&quot;]:属性值以空格隔开  其中一个属性是val</p>
+<p>e[att^=&quot;val&quot;]属性值以val开头</p>
+<p>e[att$=&quot;val&quot;]属性值为val结尾</p>
+<p>e[attr*=&quot;val&quot;]属性中包含val</p>
+<p>e[attr=&quot;val&quot;]属性以“-”分割 其中有val值  （如果属性只有val 也会被选中）</p>
+<ul>
+
+        <li skill="喷火">葫芦娃</li>
+        <li color = "black">黑猫警长</li>
+        <li color = "white">海尔兄弟</li>
+        <li color = "blue red">舒克和贝塔</li>
+        <li color = "white gray">喜羊羊与灰太狼</li>
+        <li color = "black-orange">大头儿子小头爸爸</li>
+  </ul>
+
+
+
+<h2 id="-">伪类</h2>
+<p>结构伪类：</p>
+<p>E：first-child第一个子元素</p>
+<p>E:   last-child 最后一个子元素</p>
+<p>E:nth-child(n) 第N个子元素    n从1开始  从前往后数</p>
+<p>E:nth-last-child(n) 从后往前算 </p>
+<h2 id="-">伪元素选择器</h2>
+<p>brfore&amp;&amp;after  </p>
+<p>需要配合content属性使用</p>
+<p>E:before  在元素e之前添加</p>
+<p>E:after  在元素e之后添加</p>
+<p>以前是一个冒号 现在为了跟伪类选择器有区别  最好写两个冒号</p>
+<p>E::before  在元素e之前添加</p>
+<p>E::after  在元素e之后添加</p>
+<p>first-letter  获取的是文字的第一个子</p>
+<p>first-line  获取的是内容的第一行文字</p>
+<h2 id="selection">selection</h2>
+<p>选中时的样式 </p>
+<p>只能设置背景色 前景色 文字阴影</p>
+<h2 id="placeholder">placeholder</h2>
+<p>设置input标签的placehoder属性的显示颜色</p>
+<h2 id="-">颜色表示方法</h2>
+<p>rgba</p>
+<p>rgb取值范围为 0-255</p>
+<p>a取值为0-1</p>
+<p>不设置a就没有透明度</p>
+<ul>
+<li><p>HSLA    </p>
+<ul>
+<li>Hue(色调):0-360</li>
+<li>Saturation(饱和度):0-100%</li>
+<li>Lightness(亮度):0-100%</li>
+<li><p>Alpha(透明度):0-1（小数）</p>
+<p>color: hsla(308, 85%, 58%, 1);
+color: hsl(308, 85%, 58%);</p>
+</li>
+</ul>
+<h3 id="-">取色：</h3>
+</li>
+</ul>
+<ul>
+<li><p>使用PS的拾色器即可</p>
+</li>
+<li><p>在线颜色转换</p>
+<h2 id="-">透明度的说明</h2>
+<p>opacity只能针对整个盒子设置透明度  子盒子及内容会继承父盒子的透明度  这是作为css的属性来使用的</p>
+<p>transparent始终完全透明，他是作为颜色的取值来使用color:transparent</p>
+<h1 id="-">边框圆角</h1>
+<p>border-radius</p>
+<p>从左上角开始赋值  顺时针旋转</p>
+<p>设置2个值 是对角线的形式  上左下右  上右下左</p>
+<p>设置3个值是   第1个值是上左  第2个值是上右下左  第3个值是 下右</p>
+<p>设置4个值是   上左  上右  下右 下左 顺时针</p>
+<h1 id="-">盒子阴影</h1>
+<p>box-shadow</p>
+<p> 0px  0px  30px  red</p>
+<p>​</p>
+<h1 id="-">文字阴影</h1>
+<p>text-shadow</p>
+<p>inset  0px  0px  30px  red</p>
+<p>第1个值inset  代表向里发散   第2个值代表水平  第3个值代表垂直  第4个值代表阴影模糊程度   第5个值代表阴影颜色</p>
+<h1 id="-">盒子模型</h1>
+<p>box-sizing属性用来设置默认的盒模型对元素的宽高计算方式</p>
+<p>content-box 是默认取值</p>
+<p>border-box  修改为该值后盒子的宽高直接就是宽度跟高度 不再受border跟padding的影响  但是会把盒子中内容压缩</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+</li>
+</ul>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
