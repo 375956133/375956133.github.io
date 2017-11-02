@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container" id="app">
+    <h1 v-bind:style="styleObj">study Vue</h1>
+    <h2 v-bind:style="styleObj2">我是App1</h2>
+    <input type="text" v-model="message">
+    <p>{{message}}</p>
+    <br>
+    <br>
+    <input type="button" value="点我弹框,我的样式是通过数组语法实现的" v-on:click=foo v-bind:style="[styleObj3,styleObj4,styleObj5]">
+    <br>
+    <br>
+    <table class="table">
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+      <th>ID</th>
+      <tr v-for="item in items" :key="item.id">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.sex}}</td>
+        <td>{{item.id}}</td>
+      </tr>
+    </table>
+    <button v-on:click="reverseMessage">点我逆转消息</button><br><br>
+    <component-one>
+    
+    </component-one>
+  </div>
+  <!-- ========================================== -->
+  <div id="app2">
+    <h2 v-bind:style="styleObj2">我是App2</h2>
+    <p v-if="seen">现在你看到我了</p>
+    <!-- 这是个组件 -->
+    <ol>
+      <!-- 创建一个todo-item的组件实例 -->
+      <todo-item v-for="item in sgList" v-bind:todo="item" v-bind:key="item.id">
+      </todo-item>
+    </ol>
+    <a v-bind:href="url">百度一下</a>
+    <br>
+    <a :href="url2">百度一下下</a>
+    <p v-bind:style="styleObj">{{fullName}}</p>
+    <div v-if="Math.random()>0.5">
+      now you see me
+    </div>
+    <div v-else>
+      now you do not see me
+    </div>
+    <div v-show="true">
+      v-show是通过display:block来控制的
+    </div>
+    <div>
+      <span v-for="n in 10">{{n}}</span>
+    </div>
+    <a href="#" v-on:click.once="doThis">我只能点击一次，再次点击不管用了</a><br>
+    <input type="text" v-on:keyup.enter="keyDown"><br><br>
+    
+    <select name="" id="" v-model="selected"  style="width:160px;">
+    	<option value="">北京</option>
+    	<option value="">天津</option>
+    	<option value="">上海</option>
+    </select>
+    <br>
+    <span>selected:{{selected}}</span>
+    
+  
+  </div>
+  <script>
+// import "./app1.vue";
+  Vue.component("component-one",{
+  	template:"<div style='backgroundColor:pink'><p>我是app1的全局组件中的段落内容</p><button v-on:click=fooZj>我是全局组件中的按钮</button><br><br><input type='button' v-on:click='foo2' value='点击我弹框'></div>",
+  	
+  	data:function(){
+  		return{
+  			foo2:function(){
+  				alert("组件中的data必须是一个方法而且得return一个对象")
+  			}
+  		}
+  	},
+  
+  	methods:{
+  		fooZj:function(){
+  			alert("我是组件中的方法");
+  		}
+  	}
+  });
+  var a = { num: 100 };
+  var vm = new Vue({
+    el: "#app",
+    a: a,
+
+    data: {
+      "message": "hello vue",
+      items: [{
+          "name": "岳献琴",
+          "age": "30",
+          "sex": "女",
+          "id": 0
+
+        },
+        {
+          "name": "王才",
+          "age": "27",
+          "sex": "男",
+          "id": 1
+
+        },
+        {
+          "name": "王培安",
+          "age": "3",
+          "sex": "男",
+          "id": 2
+
+        }
+
+      ],
+      styleObj: {
+        fontSize: "30px",
+        color: "pink"
+      },
+      styleObj2: {
+        color: "green"
+      },
+      styleObj3: {
+        color: "red"
+      },
+      styleObj4: {
+        backgroundColor: "yellow"
+      },
+      styleObj5: {
+        lineHeight: "30px"
+      }
+      
+
+    },
+    methods: {
+      foo: function() {
+        alert("hello vue.js");
+      },
+      reverseMessage: function() {
+        this.message = this.message.split("").reverse().join("");
+      }
+      
+    }
+
+  });
+
+  </script>
+  <script>
+  Vue.component("todo-item", {
+    props: ["todo"],
+    template: "<li>{{todo.text}}</li>"
+  })
+  var vm2 = new Vue({
+    el: "#app2",
+    data: {
+      seen: true,
+      sgList: [
+        { id: 0, text: "香蕉" },
+        { id: 1, text: "苹果" },
+        { id: 2, text: "柚子" }
+      ],
+      "url": "https://www.baidu.com/?tn=78040160_26_pg&ch=1",
+      "url2": "http://www.open-open.com/lib/view/open1447060624960.html",
+      firstName: "我是计算属性",
+      lastName: "我以差值的形式出现",
+      styleObj: {
+        fontSize: "20px",
+        color: "red"
+      },
+      styleObj2: {
+        color: "green"
+      },
+      styleObj3: {
+        color: "red"
+      },
+      selected:[]
+
+
+    },
+    computed: {
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+      }
+    },
+    methods: {
+      doThis: function() {
+        alert("我只能点击一次 v-once");
+      },
+      keyDown:function(){
+      	alert("您按下了enter键")
+      }
+    }
+  });
+  vm2.$watch("num", function(newValue, oldValue) {
+    console.log("num的值变化了")
+  })
+
+  </script>
+</body>
+
+</html>

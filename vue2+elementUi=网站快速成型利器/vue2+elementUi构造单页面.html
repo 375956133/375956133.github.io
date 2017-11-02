@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 引入element-ui的css样式 -->
+  <link rel="stylesheet" href="./node_modules/element-ui/lib/theme-default/index.css">
+  <!-- 引入vue.js -->
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <!-- 引入vue-router.js -->
+  <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+  <!-- 引入element-ui的js -->
+  <script src="./node_modules/element-ui/lib/index.js"></script>
+  
+  <style>
+  body {
+    background-color: yellowgreen;
+  }
+  
+.demo-table-expand {
+    font-size: 0;
+  }
+  .demo-table-expand label {
+    width: 90px;
+    color:blue;
+  }
+  .demo-table-expand .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 50%;
+  }
+  /* 走马灯 */
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+  }
+  
+  .el-carousel__item:nth-child(2n) {
+    background-color: hotpink;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: skyblue;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h2>Vue的单页面应用</h2>
+    <br>
+    <br>
+    <button v-on:click=foo>点我触发事件</button>
+    <br>
+    <br>
+    <router-link to="/" tag="li" exact><a href="">我只在路由为/的时候出现</a></router-link>
+    <router-link to="/api/foo" tag="li">api/foo</router-link>
+    <router-link to="/api/bar" tag="li">api/bar</router-link>
+
+    <router-view></router-view>
+
+<template>
+  <el-table
+    :data="tableData5"
+    style="width: 100%">
+    <el-table-column type="expand">
+      <template scope="props">
+        <el-form label-position="left" inline class="demo-table-expand">
+          <el-form-item label="商品名称">
+            <span>{{ props.row.name }}</span>
+          </el-form-item>
+          <el-form-item label="所属店铺">
+            <span>{{ props.row.shop }}</span>
+          </el-form-item>
+          <el-form-item label="商品 ID">
+            <span>{{ props.row.id }}</span>
+          </el-form-item>
+          <el-form-item label="店铺 ID">
+            <span>{{ props.row.shopId }}</span>
+          </el-form-item>
+          <el-form-item label="商品分类">
+            <span>{{ props.row.category }}</span>
+          </el-form-item>
+          <el-form-item label="店铺地址">
+            <span>{{ props.row.address }}</span>
+          </el-form-item>
+          <el-form-item label="商品描述">
+            <span>{{ props.row.desc }}</span>
+          </el-form-item>
+        </el-form>
+      </template>
+    </el-table-column>
+    <el-table-column
+      label="商品 ID"
+      prop="id">
+    </el-table-column>
+    <el-table-column
+      label="商品名称"
+      prop="name">
+    </el-table-column>
+    <el-table-column
+      label="描述"
+      prop="desc">
+    </el-table-column>
+  </el-table>
+</template>
+<!-- 走马灯 -->
+<template>
+  <el-carousel :interval="4000" type="card" height="200px">
+    <el-carousel-item v-for="item in 6" :key="item">
+      <h3>{{ item }}</h3>
+    </el-carousel-item>
+  </el-carousel>
+</template>
+
+  </div>
+  <script>
+
+  const gang={
+    template:"<div><h3>当路由为/时渲染到页面的样式，由组件gang来决定</h3></div>"
+  }
+      const foo = { template: "<div>foo</div>" }
+      const bar = { template: "<div>bar</div>" }
+      // <h3>这个组件的作用我个人认为是渲染到页面的样式，这个组件结合动态路由实现了单页面应用，其实框架的本质，其底层还是封装了a标签的页面跳转，就是以动态添加样式的形式添加到自己的router-link组件上 通过to属性添加样式 但是在控制台 可以看到最后渲染成了a标签</h3>
+      const Api = {
+        template: "<div>{{$route.params.id}}</div>"
+      }
+      // 在实例化根实例之前先实例化路由
+      const router = new VueRouter({
+        routes: [
+          { path: "/api/:id", component: Api },
+          { path: "/", component: gang } //组件的路由可以设置多个，以对象的形式出现
+
+        ]
+
+      });
+      const vm = new Vue({
+        el: "#app",
+       
+        // data:function(){
+        //   return{visible:false}
+
+        // },
+    //      data: () => ({
+    //   show: true
+    // }),
+      data() {
+      return {
+        tableData5: [{
+          id: '12987122',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987123',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987125',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987126',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }]
+      }
+    },
+  
+       
+        methods: {
+          foo: function() {
+            alert("hello vue")
+          }
+        },
+        router //必须把路由实例传递到根实例中
+      });
+
+   
+
+  </script>
+</body>
+
+</html>
