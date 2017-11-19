@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+	.two {
+		border:1px solid red;
+		width:100%;
+		height: 300px;
+
+	}
+	</style>
+</head>
+<body>
+<div id="app">
+<h2 v-bind:style="styleObj">study vue</h2>
+<input type="button" value="点我" v-on:click="foo" v-bind:style="styleObj2">
+<p v-if="seen">现在你看到我了</p>
+	<ul>
+		<li v-for="todo in todos" v-bind:style="styleObj3" v-if="true">{{todo.name}}</li>
+	</ul>
+	<p>{{message}}</p>
+	<button @click="reverseMessage">点我逆转消息</button><br>
+	<button @click="reversedMessage">点我逆转消息计算属性的方式实现</button><br>
+	<input type="text" v-model='message'>
+	<my-component></my-component>
+	<a v-bind:href="url">点我跳转到百度</a>
+	<h2>我儿子是:{{fullName}}</h2>
+	
+</div>
+	
+
+	<script>
+	Vue.component("my-component",{
+		template:"<div>我是组件必须在实例化vue实例之前创建</div>"
+	})
+	var vm=new Vue({
+		el:"#app",
+		data:{
+			message:"hello word",
+			seen:false,
+			a:1,
+			firstName:"王",
+			lastName:"培安",
+			url:"http://v.baidu.com",
+			isActive:true,
+			todos:
+				[
+				{"name":"岳献琴"},
+				{"name":"王才"},
+				{"name":"王培安"}
+				],
+				styleObj:{
+					color:"red",
+					fontSize:"30px"
+				},
+				styleObj2:{
+					backgroundColor:"green",
+					outlineStyle:"none"
+				},
+				styleObj3:{
+					color:"yellowgreen"
+				}
+		},
+		// 计算属性
+		computed:{
+			reversedMessage:function(){
+				return this.message.split("").reverse().join("");
+
+			},
+			fullName:function(){
+				return this.firstName+""+this.lastName;
+			}
+		},
+		methods:{
+			foo:function(){
+				console.log(1)
+			},
+			reverseMessage:function(){
+				this.message=this.message.split("").reverse().join("");
+			}
+
+		},
+		created:{
+			foo2:function(){
+				console.log("a is:"+this.a)
+			}
+
+		}
+
+	})
+
+	</script>
+	
+</body>
+</html>
