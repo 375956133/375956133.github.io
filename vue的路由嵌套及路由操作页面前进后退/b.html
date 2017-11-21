@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script src="./node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+<h1>{{message}}</h1>
+<input type="text" v-model="message"><br><br>
+	<input type="button" @click="foo" value="点我啊">
+	<my-component v-bind:num="num"></my-component>
+	<router-link to="/foo">go to foo</router-link>
+	<router-link to="/bar">go to bar</router-link>
+	<router-view></router-view>
+</div>
+	<script>
+	const Foo={template:"<div>foo</div>"}
+	const Bar={template:"<div>bar</div>"}
+	const routes=[
+	{path:"/foo",component:Foo},
+	{path:"/bar",component:Bar}
+	]
+	const router=new VueRouter({
+		routes
+	})
+	var MyComponent=Vue.extend({
+		props:["num"],
+		template:"<p>{{num +'is a' +' ' +typeof num}}</p>"
+	})
+	Vue.component("my-component",MyComponent);
+	var vm=new Vue({
+		el:"#app",
+		data:{
+			message:"hello vue",
+			num:1
+		},
+		methods:{
+			foo:function(){
+				console.log("job job job");
+			}
+		},
+		router
+	})
+	</script>
+</body>
+</html>

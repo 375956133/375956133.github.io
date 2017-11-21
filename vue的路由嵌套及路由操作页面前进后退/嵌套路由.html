@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="message">
+    <br>
+    <input type="button" @click="foo" value="点我啊">
+    <br>
+    <router-link to="/api/foo">go to foo</router-link>
+    <router-link to="/api/bar">go to bar</router-link><br>
+    <router-link to="/api/foo/foo2">go to foo2</router-link>
+    <router-link to="/api/bar/bar2">go to bar2</router-link><br>
+    <router-link to="/api/home1">go to home1</router-link>
+    <router-link to="/api/home2">go to home2</router-link><br>
+    <router-link to="/api/home3">go to home3</router-link><br>
+    <router-link to="/api">我是带查询参数的路由</router-link>
+    <router-view></router-view>
+  </div>
+  <script>
+  const Api = {
+    template:`
+    <div> 
+    	<h2> {{ $route.params.id }}</h2>
+     	<router-view></router-view>
+     </div>
+     `
+  }
+
+  const ApiFoo2 = {
+    template: "<div><p>我是嵌套的二级视图/api/foo/foo2</p></div>"
+  }
+  const ApiBar2 = {
+    template: "<div><p>我是嵌套的二级视图/api/bar/bar2</p></div>"
+    
+  }
+  
+  const router = new VueRouter({
+    routes: [{
+      path: "/api/:id",
+      component: Api,
+      children: [{
+          path: "foo2",
+          component: ApiFoo2
+        },
+        {
+          path: "bar2",
+          component: ApiBar2
+        }
+      ]
+    }]
+
+  })
+  const vm = new Vue({
+    el: "#app",
+    data: {
+      message: 'hello vue'
+    },
+    methods: {
+      foo: function() {
+        console.log(
+          "嵌套路由就是路由显示的页面再跳入下一级页面"
+        )
+      }
+    },
+    router
+
+  });
+  // 字符串形式
+  router.push("home1");
+  // 对象的形式
+  router.push({path:"home2"});
+  // 带参数的路由
+  const userId=3;
+  router.push({name:"home3",params:{userId}});
+  // 带查询参数的路由
+  router.push({path:"api",query:{plan:"homeJiazu"}});
+  // 下面的代码放开浏览器会回退一步
+  // router.go(-1)
+
+
+  </script>
+</body>
+
+</html>
